@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import type { ViewState } from "./types/viewState";
+import type { Project } from "./types/project";
 
 import HomeView from "./components/home/HomeView";
 import AboutView from "./components/about/AboutView";
@@ -8,36 +9,29 @@ import PortfolioView from "./components/portfolio/PortfolioView";
 import ContactView from "./components/contact/ContactView";
 
 function App() {
-  const [view, setView] =
-    useState<ViewState>("home");
+  const [activeOverlay, setActiveOverlay] =
+    useState<ViewState | null>(null);
+
+  const [selectedProject, setSelectedProject] =
+    useState<Project | null>(null);
 
   return (
     <>
-      <nav>
-        <button onClick={() => setView("home")}>
-          Home
-        </button>
+      <HomeView />
 
-        <button onClick={() => setView("about")}>
-          About
-        </button>
+      {activeOverlay === "about" && (
+        <AboutView
+          onClose={() => setActiveOverlay(null)}
+        />
+      )}
 
-        <button onClick={() => setView("portfolio")}>
-          Portfolio
-        </button>
+      {activeOverlay === "contact" && (
+        <ContactView />
+      )}
 
-        <button onClick={() => setView("contact")}>
-          Contact
-        </button>
-      </nav>
-
-      {view === "home" && <HomeView />}
-
-      {view === "about" && <AboutView />}
-
-      {view === "portfolio" && <PortfolioView />}
-
-      {view === "contact" && <ContactView />}
+      {activeOverlay === "portfolio" && (
+        <PortfolioView />
+      )}
     </>
   );
 }

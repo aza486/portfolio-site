@@ -1,0 +1,17 @@
+.home-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  padding: 4rem 6rem;
+}
+
+.home-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(500px, 1fr)
+    420px;
+
+  gap: 4rem;
+}

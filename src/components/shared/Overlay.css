@@ -1,0 +1,27 @@
+.overlay-backdrop {
+  position: fixed;
+
+  inset: 0;
+
+  background: rgba(0,0,0,.7);
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.overlay-content {
+  width: min(1200px, 90vw);
+
+  height: 80vh;
+
+  background: white;
+
+  padding: 2rem;
+
+  overflow: auto;
+}

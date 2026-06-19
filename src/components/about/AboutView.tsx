@@ -1,9 +1,20 @@
-function AboutView() {
+import Overlay from "../shared/Overlay";
+
+interface Props {
+  onClose: () => void;
+}
+
+function AboutView({
+  onClose,
+}: Props) {
   return (
-    <div>
-      <h2>About</h2>
-      <p>Über mich</p>
-    </div>
+    <Overlay onClose={onClose}>
+      <h2>Über mich</h2>
+
+      <p>
+        Hier kommt später dein Text.
+      </p>
+    </Overlay>
   );
 }
 

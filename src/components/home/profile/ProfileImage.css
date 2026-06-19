@@ -1,0 +1,13 @@
+.profile-image {
+  width: 100%;
+
+  aspect-ratio: 3 / 4;
+
+  border: 1px solid black;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}

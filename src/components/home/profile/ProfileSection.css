@@ -1,0 +1,16 @@
+.profile-section {
+  display: grid;
+
+  grid-template-columns: 420px 1fr;
+
+  gap: 4rem;
+
+  align-items: start;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2rem;
+}
