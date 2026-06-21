@@ -3,7 +3,12 @@ import AboutText from "./profile/AboutText";
 import TechStack from "./profile/TechStack";
 import ContactButton from "./profile/ContactButton";
 
-function ProfileSection() {
+interface ProfileSectionProps {
+  onAbout: () => void;
+  onContact: () => void;
+}
+
+function ProfileSection({ onAbout, onContact }: ProfileSectionProps) {
   return (
     <section>
       <ProfileImage />
@@ -13,7 +18,16 @@ function ProfileSection() {
 
         <TechStack />
 
-        <ContactButton />
+        <button
+          onClick={() => {
+            console.log("ABOUT CLICK");
+            onAbout();
+          }}
+        >
+          Mehr über mich
+        </button>
+
+        <ContactButton onClick={onContact} />
       </div>
     </section>
   );

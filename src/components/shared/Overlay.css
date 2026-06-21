@@ -3,7 +3,7 @@
 
   inset: 0;
 
-  background: rgba(0,0,0,.7);
+  background: rgba(0, 0, 0, 0.7);
 
   display: flex;
 
@@ -11,7 +11,7 @@
 
   align-items: center;
 
-  z-index: 1000;
+  z-index: 999;
 }
 
 .overlay-content {
@@ -23,5 +23,14 @@
 
   padding: 2rem;
 
-  overflow: auto;
+  overflow-y: auto;
+
+  position: relative;
+}
+
+.overlay-close {
+  position: absolute;
+
+  top: 1rem;
+  right: 1rem;
 }

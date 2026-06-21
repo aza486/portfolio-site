@@ -9,29 +9,29 @@ import PortfolioView from "./components/portfolio/PortfolioView";
 import ContactView from "./components/contact/ContactView";
 
 function App() {
-  const [activeOverlay, setActiveOverlay] =
-    useState<ViewState | null>(null);
+  const [activeOverlay, setActiveOverlay] = useState<ViewState | null>(null);
 
-  const [selectedProject, setSelectedProject] =
-    useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <>
-      <HomeView />
+      <HomeView
+        onAbout={() => setActiveOverlay("about")}
+        onContact={() => setActiveOverlay("contact")}
+      />
+
+      <p>
+        Active Overlay:
+        {activeOverlay ?? "null"}
+      </p>
 
       {activeOverlay === "about" && (
-        <AboutView
-          onClose={() => setActiveOverlay(null)}
-        />
+        <AboutView onClose={() => setActiveOverlay(null)} />
       )}
 
-      {activeOverlay === "contact" && (
-        <ContactView />
-      )}
+      {activeOverlay === "contact" && <ContactView />}
 
-      {activeOverlay === "portfolio" && (
-        <PortfolioView />
-      )}
+      {activeOverlay === "portfolio" && <PortfolioView />}
     </>
   );
 }
