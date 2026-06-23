@@ -1,7 +1,7 @@
 import "./HomeView.css";
 
 import HeroSection from "./HeroSection";
-import ProfileSection from "./ProfileSection";
+import ProfileSection from "./profile/ProfileSection";
 import ProjectSidebar from "./ProjectSidebar";
 import type { Project } from "../../types/project";
 

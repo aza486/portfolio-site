@@ -1,16 +1,25 @@
 .profile-section {
+  position: relative;
+
   display: grid;
 
-  grid-template-columns: 420px 1fr;
+  grid-template-columns:
+    320px
+    1fr;
 
-  gap: 4rem;
-
-  align-items: start;
+  gap: 2rem;
 }
 
 .profile-content {
   display: flex;
+
   flex-direction: column;
 
-  gap: 2rem;
+  gap: 1.5rem;
+}
+
+.profile-actions {
+  display: flex;
+
+  gap: 1rem;
 }

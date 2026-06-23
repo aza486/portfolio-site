@@ -1,21 +1,35 @@
-import "./ProfileSection.css";
-
 import ProfileImage from "./ProfileImage";
 import AboutText from "./AboutText";
 import TechStack from "./TechStack";
 import ContactButton from "./ContactButton";
+import "./ProfileSection.css";
 
-function ProfileSection() {
+interface ProfileSectionProps {
+  onAbout: () => void;
+  onContact: () => void;
+}
+
+function ProfileSection({ onAbout, onContact }: ProfileSectionProps) {
   return (
     <section className="profile-section">
-      <ProfileImage />
+      <div className="profile-image-wrapper">
+        <ProfileImage />
+      </div>
 
       <div className="profile-content">
         <AboutText />
 
         <TechStack />
 
-        <ContactButton />
+        <div className="profile-actions">
+          <button onClick={onAbout}>
+            Mehr über mich
+          </button>
+
+          <ContactButton
+            onClick={onContact}
+          />
+        </div>
       </div>
     </section>
   );
