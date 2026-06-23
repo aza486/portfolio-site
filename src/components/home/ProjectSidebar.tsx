@@ -1,7 +1,15 @@
 import { projects } from "../../data/projects";
+import type { Project } from "../../types/project";
+
 import ProjectCard from "./ProjectCard";
 
-function ProjectSidebar() {
+interface ProjectSidebarProps {
+  onProjectClick: (project: Project) => void;
+}
+
+function ProjectSidebar({
+  onProjectClick,
+}: ProjectSidebarProps) {
   return (
     <aside>
       <h2>Projekte</h2>
@@ -10,6 +18,7 @@ function ProjectSidebar() {
         <ProjectCard
           key={project.id}
           project={project}
+          onClick={() => onProjectClick(project)}
         />
       ))}
     </aside>

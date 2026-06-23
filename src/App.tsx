@@ -8,30 +8,53 @@ import AboutView from "./components/about/AboutView";
 import PortfolioView from "./components/portfolio/PortfolioView";
 import ContactView from "./components/contact/ContactView";
 
-function App() {
-  const [activeOverlay, setActiveOverlay] = useState<ViewState | null>(null);
+import Overlay from "./components/shared/Overlay";
 
-  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+function App() {
+  const [activeOverlay, setActiveOverlay] =
+    useState<ViewState | null>(null);
+
+  const [selectedProject, setSelectedProject] =
+    useState<Project | null>(null);
+
+  const closeOverlay = () => {
+    setActiveOverlay(null);
+    setSelectedProject(null);
+  };
 
   return (
     <>
       <HomeView
         onAbout={() => setActiveOverlay("about")}
         onContact={() => setActiveOverlay("contact")}
+        onProjectClick={(project) => {
+          setSelectedProject(project);
+          setActiveOverlay("portfolio");
+        }}
       />
 
-      <p>
-        Active Overlay:
-        {activeOverlay ?? "null"}
-      </p>
-
       {activeOverlay === "about" && (
-        <AboutView onClose={() => setActiveOverlay(null)} />
+        <Overlay onClose={closeOverlay}>
+          <AboutView />
+        </Overlay>
       )}
 
-      {activeOverlay === "contact" && <ContactView />}
+      {activeOverlay === "contact" && (
+        <Overlay onClose={closeOverlay}>
+          <ContactView />
+        </Overlay>
+      )}
 
-      {activeOverlay === "portfolio" && <PortfolioView />}
+    {activeOverlay === "portfolio" &&
+      selectedProject && (
+        <Overlay
+          onClose={closeOverlay}
+        >
+          <PortfolioView
+            project={selectedProject}
+          />
+        </Overlay>
+      )}
     </>
   );
 }

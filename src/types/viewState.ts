@@ -2,4 +2,5 @@ export type ViewState =
   | "home"
   | "about"
   | "contact"
-  | "portfolio";
+  | "portfolio"
+  | "project";

@@ -2,8 +2,7 @@ import type { Project } from "../../types/project";
 
 interface ProjectCardProps {
   project: Project;
-
-  onClick?: () => void;
+  onClick: () => void;
 }
 
 function ProjectCard({
@@ -12,7 +11,7 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <div onClick={onClick}>
-      {project.title}
+      <h3>{project.title}</h3>
     </div>
   );
 }
