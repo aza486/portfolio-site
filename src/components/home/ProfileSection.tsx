@@ -2,6 +2,7 @@ import ProfileImage from "./profile/ProfileImage";
 import AboutText from "./profile/AboutText";
 import TechStack from "./profile/TechStack";
 import ContactButton from "./profile/ContactButton";
+import "./ProfileSection.css";
 
 interface ProfileSectionProps {
   onAbout: () => void;
@@ -10,7 +11,7 @@ interface ProfileSectionProps {
 
 function ProfileSection({ onAbout, onContact }: ProfileSectionProps) {
   return (
-    <section>
+    <section className="profile-section">
       <ProfileImage />
 
       <div>

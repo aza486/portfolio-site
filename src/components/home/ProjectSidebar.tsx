@@ -11,7 +11,7 @@ function ProjectSidebar({
   onProjectClick,
 }: ProjectSidebarProps) {
   return (
-    <aside>
+    <aside className="project-sidebar">
       <h2>Projekte</h2>
 
       {projects.map((project) => (
