@@ -5,17 +5,23 @@
 }
 
 :root {
-  color: #f4f3f7;
-  background: #30324d;
-  font-family: Arial, Helvetica, sans-serif;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+  --font-display: "Black Ops One", Arial, sans-serif;
+  --font-body: "Roboto", Arial, Helvetica, sans-serif;
+
+  --color-bg: linear-gradient(90deg, #22223b 0%, #7180ac 100%);
+  --color-text: #f4f3f7;
+  --color-accent-red: #ff3a22;
+  --color-accent-green: #00c69a;
+
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: #30324d;
+  background: linear-gradient(90deg, #22223b -10%, #7180ac 120%);
 }
 
 button {

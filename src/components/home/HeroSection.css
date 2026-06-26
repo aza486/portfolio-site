@@ -1,0 +1,5 @@
+.hero-title {
+  font-family: var(--font-display);
+  color: var(--color-accent-red);
+  font-size: 4rem;
+}
