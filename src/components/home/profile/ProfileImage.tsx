@@ -2,9 +2,7 @@ import "./ProfileImage.css";
 
 function ProfileImage() {
   return (
-    <div className="profile-image">
-      PROFILE IMAGE
-    </div>
+    <div className="profile-image" aria-label="Profilbild Platzhalter" />
   );
 }
 

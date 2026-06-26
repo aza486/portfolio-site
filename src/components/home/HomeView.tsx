@@ -12,22 +12,22 @@ interface HomeViewProps {
 }
 
 function HomeView({ onAbout, onContact, onProjectClick }: HomeViewProps) {
-  console.log("HomeView", {
-    onAbout,
-    onContact,
-    onProjectClick,
-  });
   return (
     <div className="home-view">
-      <HeroSection />
+      <header className="home-header">
+        <HeroSection />
+      </header>
 
-      <div className="home-content">
-        <ProfileSection onAbout={onAbout} onContact={onContact} />
+      <main className="home-main">
+        <ProfileSection
+          onAbout={onAbout}
+          onContact={onContact}
+        />
 
         <ProjectSidebar
           onProjectClick={onProjectClick}
-/>
-      </div>
+        />
+      </main>
     </div>
   );
 }

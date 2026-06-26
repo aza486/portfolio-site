@@ -6,7 +6,7 @@ function ContactButton({
   onClick,
 }: ContactButtonProps) {
   return (
-    <button onClick={onClick}>
+    <button className="contact-button" onClick={onClick}>
       Kontakt
     </button>
   );

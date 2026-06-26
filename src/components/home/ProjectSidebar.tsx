@@ -1,6 +1,6 @@
 import { projects } from "../../data/projects";
 import type { Project } from "../../types/project";
-
+import "./ProjectSidebar.css";
 import ProjectCard from "./ProjectCard";
 
 interface ProjectSidebarProps {

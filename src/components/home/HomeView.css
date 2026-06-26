@@ -1,17 +1,37 @@
 .home-view {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-  padding: 4rem 6rem;
+  width: min(100%, 1540px);
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 5.5rem 0 4.5rem;
 }
 
-.home-content {
+.home-header {
+  margin-left: 0;
+}
+
+.hero-section {
   display: grid;
+  gap: 1rem;
+}
 
-  grid-template-columns:
-    minmax(500px, 1fr)
-    420px;
+.hero-name {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1;
+}
 
-  gap: 4rem;
+.hero-title {
+  color: #ff3a22;
+  font-size: clamp(3.25rem, 4.3vw, 4.9rem);
+  font-weight: 900;
+  line-height: 0.95;
+}
+
+.home-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 424px;
+  gap: 4.8rem;
+  align-items: start;
+  margin-top: 4.8rem;
 }

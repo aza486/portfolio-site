@@ -1,13 +1,7 @@
-function AboutView() {
-  return (
-    <>
-      <h2>Über mich</h2>
+import AboutContent from "./AboutContent";
 
-      <p>
-        Hier kommt später dein echter Text.
-      </p>
-    </>
-  );
+function AboutView() {
+  return <AboutContent />;
 }
 
 export default AboutView;

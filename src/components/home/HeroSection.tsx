@@ -1,14 +1,14 @@
 function HeroSection() {
   return (
-    <header>
-      <p>Daniel Podjapolski</p>
+    <div className="hero-section">
+      <p className="hero-name">Daniel Podjapolski</p>
 
-      <h1>
+      <h1 className="hero-title">
         Hallo, ich bin
         <br />
         Designer&Developer
       </h1>
-    </header>
+    </div>
   );
 }
 

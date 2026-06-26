@@ -2,24 +2,70 @@ import type { Project } from "../types/project";
 
 export const projects: Project[] = [
   {
-    id: "libredesk",
+    id: "project-a",
 
-    title: "Custom LibreDesk",
+    title: "Projekt A",
 
     shortDescription:
-      "Custom Helpdesk Erweiterungen",
+      "Konzept und Umsetzung einer digitalen Produktseite.",
 
     longDescription: [
-      "Erweiterung von LibreDesk.",
-      "KI-Integration über n8n.",
-      "Workflow Automatisierung."
+      "Visuelles Konzept, Prototyping und responsive Umsetzung.",
+      "Fokus auf klare Informationsarchitektur und schnelle Bedienbarkeit.",
+      "Integration von Automatisierungen für wiederkehrende Abläufe."
     ],
 
     technologies: [
+      "React",
+      "TypeScript",
+      "CSS",
+      "n8n"
+    ],
+
+    images: []
+  },
+  {
+    id: "project-b",
+
+    title: "Projekt B",
+
+    shortDescription:
+      "Interaktives Frontend für einen datengetriebenen Workflow.",
+
+    longDescription: [
+      "Komponentenbasierte Oberfläche mit wiederverwendbaren UI-Bausteinen.",
+      "Optimiert für komplexe Zustände und schnelle Nutzerentscheidungen.",
+      "Automatisierte Schnittstellen für Daten, Benachrichtigungen und Reports."
+    ],
+
+    technologies: [
+      "Angular",
       "Go",
-      "Vue",
       "PostgreSQL",
       "n8n"
+    ],
+
+    images: []
+  },
+  {
+    id: "project-c",
+
+    title: "Projekt C",
+
+    shortDescription:
+      "Portfolio-Case mit Designsystem und technischer Umsetzung.",
+
+    longDescription: [
+      "Gestaltung eines konsistenten visuellen Systems.",
+      "Umsetzung mit modernen Webtechnologien und sauberer Komponentenstruktur.",
+      "Vorbereitung für spätere Case-Study-Inhalte und Mediengalerien."
+    ],
+
+    technologies: [
+      "Vue",
+      "JavaScript",
+      "HTML",
+      "CSS"
     ],
 
     images: []

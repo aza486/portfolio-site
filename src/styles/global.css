@@ -4,6 +4,26 @@
   box-sizing: border-box;
 }
 
+:root {
+  color: #f4f3f7;
+  background: #30324d;
+  font-family: Arial, Helvetica, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
 body {
+  min-width: 320px;
   min-height: 100vh;
+  background: #30324d;
+}
+
+button {
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
 }

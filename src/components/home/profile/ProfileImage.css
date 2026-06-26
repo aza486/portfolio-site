@@ -1,13 +1,32 @@
 .profile-image {
   width: 100%;
+  min-height: 785px;
+  background:
+    radial-gradient(circle at 50% 16%, #f4b18a 0 10%, transparent 11%),
+    linear-gradient(150deg, transparent 0 18%, #d9e7ef 19% 64%, transparent 65%),
+    linear-gradient(180deg, #f1c09a 0 44%, #e8a77e 45% 64%, transparent 65%);
+  border-radius: 46% 46% 12% 12%;
+  position: relative;
+  overflow: hidden;
+}
 
-  aspect-ratio: 3 / 4;
+.profile-image::before {
+  content: "";
+  position: absolute;
+  inset: 24% 5% 2%;
+  background:
+    linear-gradient(135deg, transparent 0 24%, rgba(255, 255, 255, 0.28) 25% 34%, transparent 35%),
+    linear-gradient(180deg, #d7e7ef 0%, #b6d0dc 100%);
+  border-radius: 36% 36% 16% 16%;
+}
 
-  border: 1px solid black;
-
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
+.profile-image::after {
+  content: "Profilbild";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: rgba(36, 36, 63, 0.55);
+  font-size: 1rem;
+  font-weight: 800;
+  transform: translate(-50%, -50%);
 }
