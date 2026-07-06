@@ -1,0 +1,11 @@
+.about-title {
+   font-family: var(--font-display);
+   font-weight: 400;
+}
+
+
+.about-description {
+   color: #ffffff;
+   font-family: var(--font-body);
+}
+

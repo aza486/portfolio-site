@@ -1,14 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-:root {
-  --font-display: "Black Ops One", Arial, sans-serif;
-  --font-body: "Roboto", Arial, Helvetica, sans-serif;
 
-  --color-bg: linear-gradient(90deg, #22223b 0%, #7180ac 100%);
+:root {
+  --font-display: "Black Ops One", Arial, Helvetica, sans-serif;
+  --font-body: "Roboto", Arial, Helvetica, sans-serif;
+  --color-bg: linear-gradient(90deg, #22223b -10%, #7180ac 120%);
   --color-text: #f4f3f7;
   --color-accent-red: #ff3a22;
   --color-accent-green: #00c69a;
@@ -21,7 +23,7 @@
 body {
   min-width: 320px;
   min-height: 100vh;
-  background: linear-gradient(90deg, #22223b -10%, #7180ac 120%);
+  background: var(--color-bg);
 }
 
 button {
