@@ -1,14 +1,21 @@
 .project-sidebar {
   display: flex;
   flex-direction: column;
-  gap: 3rem;
-  align-self: start;
+  height: 100%;
 }
 
 .project-sidebar h2 {
-  align-self: flex-end;
   color: #00c69a;
-  font-size: 1.9rem;
-  font-weight: 900;
-  line-height: 1;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 2.2rem;
+}
+
+.project-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
+  gap: 2rem;
 }

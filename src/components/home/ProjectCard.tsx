@@ -1,4 +1,5 @@
 import type { Project } from "../../types/project";
+
 import "./ProjectCard.css";
 
 interface ProjectCardProps {
@@ -11,9 +12,16 @@ function ProjectCard({
   onClick,
 }: ProjectCardProps) {
   return (
-    <button className="project-card" onClick={onClick}>
-      <span className={`project-card-visual project-card-visual-${project.id}`} />
-      <span className="project-card-title">{project.title}</span>
+    <button
+      className="project-card"
+      onClick={onClick}
+    >
+      <div className="project-card-image">
+        <img
+          src={project.images[0]}
+          alt={project.title}
+        />
+      </div>
     </button>
   );
 }

@@ -1,24 +1,9 @@
 .profile-image {
-  width: 100%;
-  min-height: 885px;
-  background-image: url("C:\Users\User\Desktop\project\public\WhatsApp Image 2026-06-30 at 09.42.34.png");
-  background-size: cover;
-  position: relative;
-  overflow: show;
-}
-
-.profile-image::before {
-  position: absolute;
-  inset: 24% 5% 2%;
-}
-
-.profile-image::after {
-  content: "Profilbild";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  color: rgba(36, 36, 63, 0.55);
-  font-size: 1rem;
-  font-weight: 800;
-  transform: translate(-50%, -50%);
+  display: block;
+  width: 560px;
+  height: auto;
+  margin-left: -110px;
+  margin-top: 40px;
+  pointer-events: none;
+  user-select: none;
 }

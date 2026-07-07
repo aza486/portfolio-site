@@ -2,7 +2,11 @@ import "./ProfileImage.css";
 
 function ProfileImage() {
   return (
-    <div className="profile-image" aria-label="Profilbild Platzhalter" />
+    <img
+      className="profile-image"
+      src="/daniel-portrait.png"
+      alt="Daniel Podjapolski"
+    />
   );
 }
 
