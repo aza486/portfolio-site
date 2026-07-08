@@ -1,8 +1,7 @@
 .profile-image {
   display: block;
-  width: 560px;
+  width: 800px;
   height: auto;
-  margin-left: -110px;
   margin-top: 40px;
   pointer-events: none;
   user-select: none;

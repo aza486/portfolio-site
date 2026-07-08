@@ -1,8 +1,9 @@
 .home-view {
   width: min(100%, 1540px);
-  min-height: 100vh;
+  height: 100vh;
   margin: 0 auto;
-  padding: 5.5rem 0 4.5rem;
+  padding: 3.5rem 0 2.5rem;
+  box-sizing: border-box;
 }
 
 .home-header {
@@ -36,5 +37,5 @@
     400px;
   column-gap: 3.8rem;
   align-items: start;
-  margin-top: 4.8rem;
+  margin-top: 2.8rem;
 }

@@ -1,22 +1,21 @@
 .profile-section {
-  display: grid;
-  grid-template-columns: 380px 1fr;
-  column-gap: 4rem;
   position: relative;
-  min-height: 760px;
-  align-items: start;
+  min-height: 680px;
 }
 
 .profile-image-layer {
-  position: relative;
-  width: 380px;
+  position: absolute;
+  width: auto;
+  left: 0;
+  bottom: 0;
 }
 
 .profile-content {
   display: flex;
   flex-direction: column;
   gap: 2.3rem;
-  max-width: 650px;
+  margin-left: 430px;
+  max-width: 640px;
 }
 
 .about-content {
