@@ -1,25 +1,22 @@
 .project-card {
-  display: block;
-  width: 100%;
-  border: none;
-  background: transparent;
+  width: 80%;
+  aspect-ratio: 16 / 9;
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 12px;
+  overflow: hidden;
   cursor: pointer;
-  padding: 0;
+  transition: transform .2s ease;
 }
 
 .project-card-image {
   overflow: hidden;
   aspect-ratio: 16 / 9;
-  border: 2px solid rgba(255,255,255,.9);
-  border-radius: 12px;
-  background: #2f3352;
   transition:
     transform .25s ease,
     box-shadow .25s ease;
 }
 
-.project-card:hover .project-card-image {
-  transform: translateY(-4px);
+.project-card:hover {
   box-shadow:
     0 12px 30px rgba(0,0,0,.35);
 }
