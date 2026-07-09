@@ -1,4 +1,7 @@
 import type { Project } from "../types/project";
+import libreDeskCover from "../assets/projects/Gebürstet_60x_40_P90414909_highRes_bmw-m4-competition-c.jpg";
+import photolabCover from "../assets/projects/lamborghini-murcielago-lp640-4-lamborghini-vehicle-car-digital-art-hd-wallpaper-98c65df860801cc8f0dc61ae5832c4da.jpg";
+import fitKnightCover from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
 
 export const projects: Project[] = [
   {
@@ -22,7 +25,7 @@ export const projects: Project[] = [
       "n8n"
     ],
 
-    images: []
+    images: [libreDeskCover]
   },
   {
     id: "project-b",
@@ -45,7 +48,7 @@ export const projects: Project[] = [
       "n8n"
     ],
 
-    images: []
+    images: [photolabCover]
   },
   {
     id: "project-c",
@@ -68,6 +71,6 @@ export const projects: Project[] = [
       "CSS"
     ],
 
-    images: []
+    images: [fitKnightCover]
   }
 ];

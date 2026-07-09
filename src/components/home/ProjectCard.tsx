@@ -13,14 +13,20 @@ function ProjectCard({
 }: ProjectCardProps) {
   return (
     <button
+      type="button"
       className="project-card"
       onClick={onClick}
+      aria-label={`Projekt ${project.title} öffnen`}
     >
       <div className="project-card-image">
         <img
           src={project.images[0]}
           alt={project.title}
         />
+
+        <div className="project-card-overlay">
+          <h3>{project.title}</h3>
+        </div>
       </div>
     </button>
   );
