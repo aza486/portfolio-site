@@ -45,8 +45,12 @@ function Overlay({
         className="overlay-content"
         onClick={(e) => e.stopPropagation()}
       >
-        <button onClick={onClose}>
-          X
+        <button
+          className="overlay-close"
+          onClick={onClose}
+          aria-label="Overlay schließen"
+        >
+          ✕
         </button>
 
         {children}

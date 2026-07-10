@@ -5,13 +5,13 @@ export interface Project {
 
   shortDescription: string;
 
-  longDescription: string[];
+  responsibilities: string[];
+
+  features: string[];
 
   technologies: string[];
 
-  images: string[];
-
   github?: string;
 
-  liveUrl?: string;
+  images: string[];
 }

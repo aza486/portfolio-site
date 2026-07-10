@@ -1,36 +1,55 @@
 .overlay-backdrop {
   position: fixed;
-
   inset: 0;
-
-  background: rgba(0, 0, 0, 0.7);
-
   display: flex;
-
   justify-content: center;
-
   align-items: center;
-
   z-index: 999;
+  background: rgba(8, 8, 14, .55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
 }
 
 .overlay-content {
-  width: min(1200px, 90vw);
-
-  height: 80vh;
-
-  background: white;
-
-  padding: 2rem;
-
-  overflow-y: auto;
-
   position: relative;
+  width: min(92vw, 1520px);
+  height: min(90vh, 860px);
+  overflow: visible;
+  background: transparent;
+  padding: 0;
 }
 
-.overlay-close {
-  position: absolute;
+.overlay-close{
 
-  top: 1rem;
-  right: 1rem;
+  position:absolute;
+  background: transparent;
+  top:12px;
+  right:32px;
+
+  width:42px;
+  height:42px;
+
+  border:none;
+  border-radius:50%;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:white;
+
+
+  font-size:1.6rem;
+
+  cursor:pointer;
+
+
+  transition:
+      transform .2s ease;
+}
+
+.overlay-close:hover{
+
+
+  transform:scale(1.08) rotate(90deg);
 }
