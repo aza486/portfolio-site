@@ -63,11 +63,29 @@
   align-items: center;
 }
 
-.tech-icon {
+.tech-swiper-compact .tech-slide{
+    width:auto !important;
+}
+
+.tech-swiper-compact .swiper-wrapper{
+    align-items:center;
+}
+
+.tech-swiper .tech-icon{
   height: 42px;
   width: auto;
 
   transition: transform .25s ease;
+}
+
+.portfolio-techstack .tech-swiper {
+    width: 250px;
+    margin-left: 20px;
+}
+
+.tech-swiper-compact .tech-icon{
+
+  height:32px;
 }
 
 .profile-actions {

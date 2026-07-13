@@ -4,6 +4,7 @@ import libreDesk2 from "../assets/projects/lamborghini-murcielago-lp640-4-lambor
 import libreDesk3 from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
 import photolabCover from "../assets/projects/lamborghini-murcielago-lp640-4-lamborghini-vehicle-car-digital-art-hd-wallpaper-98c65df860801cc8f0dc61ae5832c4da.jpg";
 import fitKnightCover from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
+import { techStackMap } from "./techStack";
 
 export const projects: Project[] = [
   {
@@ -18,8 +19,8 @@ export const projects: Project[] = [
       "Frontend-Anpassungen mit React",
       "Backend-Anpassungen in Go",
       "REST-API zwischen LibreDesk und n8n",
-      "PostgreSQL",
-      "Docker & Linux"
+      "PostgreSQL als Ticket-DB",
+      "Docker & Linux Deployment"
     ],
 
     features: [
@@ -30,11 +31,13 @@ export const projects: Project[] = [
       "neue UI-Komponenten"
     ],
 
-    technologies: [
-      "React",
-      "TypeScript",
-      "CSS",
-      "n8n"
+    techIcons: [
+      techStackMap["React"],
+      techStackMap["Go"],
+      techStackMap["PostgreSQL"],
+      techStackMap["n8n"],
+      techStackMap["Git"],
+      techStackMap["Docker"],
     ],
 
     images: [
@@ -62,11 +65,12 @@ export const projects: Project[] = [
       "...",
       "...",
     ],
-    technologies: [
-      "Angular",
-      "Go",
-      "PostgreSQL",
-      "n8n"
+
+    techIcons: [
+      techStackMap["Shopware"],
+      techStackMap["JavaScript"],
+      techStackMap["Docker"],
+      techStackMap["Git"],
     ],
 
     images: [photolabCover]
@@ -91,11 +95,11 @@ export const projects: Project[] = [
       "...",
     ],
 
-    technologies: [
-      "Vue",
-      "JavaScript",
-      "HTML",
-      "CSS"
+    techIcons: [
+      techStackMap["Shopware"],
+      techStackMap["JavaScript"],
+      techStackMap["Docker"],
+      techStackMap["Git"],
     ],
 
     images: [fitKnightCover]

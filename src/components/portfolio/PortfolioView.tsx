@@ -1,6 +1,7 @@
 import type { Project } from "../../types/project";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import TechStack from "../home/profile/TechStack";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -107,13 +108,21 @@ function PortfolioView({ project }: PortfolioViewProps) {
 
         </section>
 
+        <section className="portfolio-techstack">
+
+          <h3>Techstack</h3>
+
+          <TechStack
+            compact
+            showTitle={false}
+            items={project.techIcons}
+          />
+
+        </section>
+
         <button className="github-button">
           Code auf GitHub →
         </button>
-
-        <section className="portfolio-techstack">
-          {/* TechStack kommt später */}
-        </section>
 
       </aside>
 

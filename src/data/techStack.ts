@@ -17,7 +17,16 @@ import react from "../assets/icons/react.svg";
 import shopware from "../assets/icons/shopware.svg";
 import typescript from "../assets/icons/typescript.svg";
 
-export const techStack = [
+export interface TechStackItem {
+
+    name: string;
+
+    icon: string;
+
+    scale: number;
+}
+
+export const techStack: TechStackItem[] = [
   {
     name: "React",
     icon: react,
@@ -109,3 +118,7 @@ export const techStack = [
     scale: 1,
   },
 ];
+
+export const techStackMap = Object.fromEntries(
+  techStack.map((item) => [item.name, item]),
+) satisfies Record<string, TechStackItem>;

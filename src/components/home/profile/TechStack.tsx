@@ -1,26 +1,35 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useRef } from "react";
-
 import "swiper/css";
-
 import "./ProfileSection.css";
 import { techStack } from "../../../data/techStack";
+import type { TechStackItem } from "../../../data/techStack";
 
-function TechStack() {
+interface TechStackProps {
+  compact?: boolean;
+  showTitle?: boolean;
+  items?: TechStackItem[];
+}
+
+function TechStack({
+  compact = false,
+  showTitle = true,
+  items,
+}: TechStackProps) {
   const restartTimer = useRef<number | null>(null);
   const swiperRef = useRef<any>(null);
   return (
     <section className="tech-stack">
-      <h2>Techstack</h2>
+        {showTitle && <h2>Techstack</h2>}
 
-        <Swiper
+        <Swiper 
           modules={[Autoplay]}
-          className="tech-swiper"
+          className={`tech-swiper ${compact ? "tech-swiper-compact" : ""}`}
           slidesPerView="auto"
-          spaceBetween={36}
+          spaceBetween={compact ? 18 : 36}
           loop
-          speed={2000}
+          speed={compact ? 1500 : 2000}
           grabCursor={true}
           allowTouchMove={true}
           simulateTouch={true}
@@ -48,7 +57,7 @@ function TechStack() {
           }}
           
         >
-          {techStack.map((tech) => (
+          {(items ?? techStack).map((tech) => (
             <SwiperSlide
               key={tech.name}
               className="tech-slide"

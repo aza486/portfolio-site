@@ -14,7 +14,7 @@
 .overlay-content {
   position: relative;
   width: min(92vw, 1520px);
-  height: min(90vh, 860px);
+  height: min(74vh, 860px);
   overflow: visible;
   background: transparent;
   padding: 0;
@@ -25,7 +25,7 @@
   position:absolute;
   background: transparent;
   top:12px;
-  right:32px;
+  right:-18px;
 
   width:42px;
   height:42px;
