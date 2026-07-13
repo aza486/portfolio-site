@@ -41,9 +41,18 @@ export const projects: Project[] = [
     ],
 
     images: [
-      libreDeskCover,
-      libreDesk2,
-      libreDesk3,
+      {
+        src: libreDeskCover,
+        title: "Ticketsystem in Aktion",
+      },
+      {
+        src: libreDesk2,
+        title: "KI-generierter Antwortsvorschlag",
+      },
+      {
+        src: libreDesk3,
+        title: "n8n Workflow zur Ticketverarbeitung",
+      },
     ]
   },
   {
@@ -73,7 +82,12 @@ export const projects: Project[] = [
       techStackMap["Git"],
     ],
 
-    images: [photolabCover]
+    images: [
+      {
+        src: photolabCover,
+        title: "Photolab Oberfläche",
+      },
+    ]
   },
   {
     id: "project-c",
@@ -102,6 +116,11 @@ export const projects: Project[] = [
       techStackMap["Git"],
     ],
 
-    images: [fitKnightCover]
+    images: [
+      {
+        src: fitKnightCover,
+        title: "FitKnight Oberfläche",
+      },
+    ]
   }
 ];

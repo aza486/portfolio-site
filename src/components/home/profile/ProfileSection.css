@@ -50,6 +50,7 @@
 .tech-swiper {
   width: 100%;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 .tech-swiper .swiper-wrapper {
@@ -63,13 +64,6 @@
   align-items: center;
 }
 
-.tech-swiper-compact .tech-slide{
-    width:auto !important;
-}
-
-.tech-swiper-compact .swiper-wrapper{
-    align-items:center;
-}
 
 .tech-swiper .tech-icon{
   height: 42px;
@@ -78,15 +72,6 @@
   transition: transform .25s ease;
 }
 
-.portfolio-techstack .tech-swiper {
-    width: 250px;
-    margin-left: 20px;
-}
-
-.tech-swiper-compact .tech-icon{
-
-  height:32px;
-}
 
 .profile-actions {
   display: grid;
@@ -114,8 +99,61 @@
 }
 
 .contact-button:hover {
-  background: var(--color-accent-darkblue);
   color: var(--color-accent-red);
   box-shadow:
     0 12px 30px rgba(0,0,0,.35);
+}
+
+/* ---------- PROJECT TECH MARQUEE ---------- */
+
+.tech-marquee {
+
+    width: 250px;
+
+    overflow: hidden;
+
+    margin-left: 20px;
+}
+
+.tech-marquee-track {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 26px;
+
+    width: max-content;
+
+    animation: tech-marquee 12s linear infinite;
+}
+
+.tech-marquee .tech-slide {
+
+    flex: 0 0 auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.tech-marquee .tech-icon {
+
+    height: 32px;
+
+    width: auto;
+}
+
+@keyframes tech-marquee {
+
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+
 }

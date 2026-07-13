@@ -1,5 +1,13 @@
 import type { TechStackItem } from "../data/techStack";
 
+export interface ProjectImage {
+
+  src: string;
+
+  title: string;
+
+}
+
 export interface Project {
   id: string;
 
@@ -15,5 +23,5 @@ export interface Project {
 
   github?: string;
 
-  images: string[];
+  images: ProjectImage[];
 }

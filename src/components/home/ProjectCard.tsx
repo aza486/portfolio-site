@@ -20,8 +20,8 @@ function ProjectCard({
     >
       <div className="project-card-image">
         <img
-          src={project.images[0]}
-          alt={project.title}
+          src={project.images[0].src}
+          alt={project.images[0].title}
         />
 
         <div className="project-card-overlay">

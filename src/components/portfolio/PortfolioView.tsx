@@ -2,17 +2,22 @@ import type { Project } from "../../types/project";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import TechStack from "../home/profile/TechStack";
+import { useEffect, useState } from "react";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "./PortfolioView.css";
-
 interface PortfolioViewProps {
   project: Project;
 }
 
 function PortfolioView({ project }: PortfolioViewProps) {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [animateCaption, setAnimateCaption] = useState(false);
+  useEffect(() => {
+  setAnimateCaption(true);
+  }, []);
   return (
     <div className="portfolio-view">
 
@@ -39,6 +44,19 @@ function PortfolioView({ project }: PortfolioViewProps) {
             }}
 
             speed={700}
+
+            onSlideChange={(swiper) => {
+
+              setAnimateCaption(false);
+
+              setTimeout(() => {
+                setActiveSlide(swiper.realIndex);
+                setAnimateCaption(true);
+              }, 120);
+
+            }}
+            
+
           >
 
             {project.images.map((image, index) => (
@@ -48,8 +66,8 @@ function PortfolioView({ project }: PortfolioViewProps) {
                 <div className="portfolio-image">
 
                   <img
-                    src={image}
-                    alt={`${project.title} ${index + 1}`}
+                    src={image.src}
+                    alt={image.title}
                   />
 
                 </div>
@@ -62,8 +80,10 @@ function PortfolioView({ project }: PortfolioViewProps) {
 
             <div className="portfolio-gallery-footer">
 
-              <div className="portfolio-caption">
-                Ticketsystem in Aktion
+              <div
+                className={`portfolio-caption ${animateCaption ? "show" : ""}`}
+              >
+                {project.images[activeSlide]?.title}
               </div>
 
             </div>
@@ -129,5 +149,6 @@ function PortfolioView({ project }: PortfolioViewProps) {
     </div>
   );
 }
+
 
 export default PortfolioView;

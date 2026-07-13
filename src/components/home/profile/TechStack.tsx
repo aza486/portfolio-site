@@ -19,7 +19,47 @@ function TechStack({
 }: TechStackProps) {
   const restartTimer = useRef<number | null>(null);
   const swiperRef = useRef<any>(null);
+  if (compact) {
+
+  const displayItems = [
+    ...(items ?? []),
+    ...(items ?? []),
+  ];
+
   return (
+    <section className="tech-stack">
+
+      <div className="tech-marquee">
+
+        <div className="tech-marquee-track">
+
+          {displayItems.map((tech, index) => (
+
+            <div
+              key={`${tech.name}-${index}`}
+              className="tech-slide"
+            >
+              <img
+                src={tech.icon}
+                alt={tech.name}
+                className="tech-icon"
+                style={{
+                  transform: `scale(${tech.scale})`,
+                }}
+              />
+            </div>
+
+          ))}
+
+        </div>
+
+      </div>
+
+    </section>
+  );
+}
+  return (
+    
     <section className="tech-stack">
         {showTitle && <h2>Techstack</h2>}
 
