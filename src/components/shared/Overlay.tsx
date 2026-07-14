@@ -4,11 +4,14 @@ import "./Overlay.css";
 interface OverlayProps {
   children: React.ReactNode;
   onClose: () => void;
+
+  size?: "portfolio" | "contact";
 }
 
 function Overlay({
   children,
   onClose,
+  size = "portfolio",
 }: OverlayProps) {
 
   useEffect(() => {
@@ -41,8 +44,8 @@ function Overlay({
           onClose();
         }}
       >
-      <div
-        className="overlay-content"
+    <div
+      className={`overlay-content overlay-${size}`}
         onClick={(e) => e.stopPropagation()}
       >
         <button

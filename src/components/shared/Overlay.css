@@ -6,18 +6,31 @@
   align-items: center;
   z-index: 999;
   background: rgba(8, 8, 14, .55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 
 }
 
 .overlay-content {
   position: relative;
-  width: min(92vw, 1520px);
-  height: min(74vh, 860px);
-  overflow: visible;
+  overflow: auto;
+  overflow-x:hidden;
   background: transparent;
   padding: 0;
+    box-shadow:
+    0 12px 30px rgba(255, 255, 255, 0.2);
+    border-radius:16px;
+}
+
+.overlay-portfolio {
+  max-width: 1500px;
+  width: calc(100vw - 80px);
+  max-height: calc(100vh - 80px);
+}
+
+.overlay-contact{
+  width:min(1100px,90vw);
+  height:min(720px,82vh);
 }
 
 .overlay-close{
@@ -25,7 +38,7 @@
   position:absolute;
   background: transparent;
   top:12px;
-  right:-18px;
+  right:12px;
 
   width:42px;
   height:42px;

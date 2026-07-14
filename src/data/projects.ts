@@ -38,6 +38,7 @@ export const projects: Project[] = [
       techStackMap["n8n"],
       techStackMap["Git"],
       techStackMap["Docker"],
+      techStackMap["openAI"],
     ],
 
     images: [

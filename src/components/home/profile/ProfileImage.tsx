@@ -4,7 +4,7 @@ function ProfileImage() {
   return (
     <img
       className="profile-image"
-      src="/daniel-portrait.png"
+      src="src\assets\profile\profile.png"
       alt="Daniel Podjapolski"
     />
   );

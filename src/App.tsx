@@ -40,7 +40,7 @@ function App() {
       )}
 
       {activeOverlay === "contact" && (
-        <Overlay onClose={closeOverlay}>
+        <Overlay size="contact" onClose={closeOverlay}>
           <ContactView />
         </Overlay>
       )}

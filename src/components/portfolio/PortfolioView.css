@@ -1,15 +1,17 @@
 .portfolio-view {
-  width: min(92vw, 1550px);
-  height: min(88vh, 750px);
+  max-width: 1500px;
+  width: calc(100vw - 80px);
 
+  max-height: calc(100vh - 80px);
   display: grid;
   grid-template-columns: minmax(0, 2.4fr) minmax(340px, 1fr);
   gap: 2.8rem;
 
   padding: 2.6rem;
 
-  background: #24243f;
+  background: var(--color-bg-overlay);
   border-radius: 14px;
+
 }
 
 /* ========================================= */

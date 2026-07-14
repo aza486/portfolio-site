@@ -15,6 +15,7 @@
 
   /* Colors */
   --color-bg: linear-gradient(90deg, #22223b -10%, #7180ac 120%);
+  --color-bg-overlay: #0B0D21;
   --color-text: #f4f3f7;
   --color-accent-red: #ff3a22;
   --color-accent-green: #00c69a;

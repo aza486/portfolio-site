@@ -16,6 +16,8 @@ import premiere from "../assets/icons/premierepro.svg";
 import react from "../assets/icons/react.svg";
 import shopware from "../assets/icons/shopware.svg";
 import typescript from "../assets/icons/typescript.svg";
+import openai from "../assets/icons/openai.svg";
+import claude from "../assets/icons/claude.svg";
 
 export interface TechStackItem {
 
@@ -115,6 +117,16 @@ export const techStack: TechStackItem[] = [
   {
     name: "CSS3",
     icon: css,
+    scale: 1,
+  },
+  {
+    name: "openAI",
+    icon: openai,
+    scale: 0.9,
+  },
+  {
+    name: "Claude AI",
+    icon: claude,
     scale: 1,
   },
 ];
