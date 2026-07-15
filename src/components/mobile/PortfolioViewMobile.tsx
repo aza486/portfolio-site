@@ -115,6 +115,7 @@ function PortfolioViewMobile({
         <h3>Techstack</h3>
 
         <TechStack
+          compact
           showTitle={false}
           items={project.techIcons}
         />
