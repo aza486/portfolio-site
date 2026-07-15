@@ -152,7 +152,7 @@
 /* BUTTON                                    */
 /* ========================================= */
 
-.github-button {
+.project-button {
   align-self: flex-start;
 
   margin-top: 0;
@@ -167,11 +167,12 @@
 
   font-weight: 700;
   cursor: pointer;
+  text-decoration: none;
 
   transition: .2s ease;
 }
 
-.github-button:hover {
+.project-button:hover {
   background: #93a2d4;
   transform: translateY(-2px);
   color: var(--color-accent-red);

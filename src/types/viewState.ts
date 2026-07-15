@@ -4,3 +4,10 @@ export type ViewState =
   | "contact"
   | "portfolio"
   | "project";
+
+  export type MobileViewState =
+  | "home"
+  | "about"
+  | "projects"
+  | "portfolio"
+  | "contact";

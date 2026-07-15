@@ -5,6 +5,7 @@ import ProfileSection from "./profile/ProfileSection";
 import ProjectSidebar from "./ProjectSidebar";
 import type { Project } from "../../types/project";
 
+
 interface HomeViewProps {
   onAbout: () => void;
   onContact: () => void;

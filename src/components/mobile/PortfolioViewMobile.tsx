@@ -1,0 +1,143 @@
+import "./PortfolioViewMobile.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import TechStack from "../home/profile/TechStack";
+
+import type { Project } from "../../types/project";
+
+interface PortfolioViewMobileProps {
+  project: Project;
+  onBack: () => void;
+}
+
+function PortfolioViewMobile({
+  project,
+  onBack,
+}: PortfolioViewMobileProps) {
+
+  return (
+
+    <section className="portfolio-mobile">
+
+      <button
+        className="mobile-close"
+        onClick={onBack}
+      >
+        ✕
+      </button>
+
+      <h2>{project.title}</h2>
+
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        className="portfolio-mobile-swiper"
+
+        pagination={{
+          clickable: true,
+        }}
+
+        autoplay={{
+          delay: 7000,
+          disableOnInteraction: false,
+        }}
+
+        loop
+
+        spaceBetween={20}
+      >
+
+        {project.images.map((image, index) => (
+
+          <SwiperSlide key={index}>
+
+            <img
+              src={image.src}
+              alt={image.title}
+            />
+
+          </SwiperSlide>
+
+        ))}
+
+      </Swiper>
+
+      <div className="portfolio-mobile-caption">
+
+        {project.images[0].title}
+
+      </div>
+
+      <p className="portfolio-mobile-description">
+
+        {project.shortDescription}
+
+      </p>
+
+      <section className="portfolio-mobile-section">
+
+        <h3>Meine Aufgaben</h3>
+
+        <ul>
+
+          {project.responsibilities.map((item) => (
+
+            <li key={item}>{item}</li>
+
+          ))}
+
+        </ul>
+
+      </section>
+
+      <section className="portfolio-mobile-section">
+
+        <h3>Features</h3>
+
+        <ul>
+
+          {project.features.map((item) => (
+
+            <li key={item}>{item}</li>
+
+          ))}
+
+        </ul>
+
+      </section>
+
+      <section className="portfolio-mobile-techstack">
+
+        <h3>Techstack</h3>
+
+        <TechStack
+          showTitle={false}
+          items={project.techIcons}
+        />
+
+      </section>
+
+      {project.ctaUrl && (
+
+        <a
+          className="project-button"
+          href={project.ctaUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {project.ctaLabel}
+        </a>
+
+      )}
+
+    </section>
+
+  );
+
+}
+
+export default PortfolioViewMobile;

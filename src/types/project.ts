@@ -21,7 +21,9 @@ export interface Project {
 
   techIcons: TechStackItem[];
 
-  github?: string;
-
   images: ProjectImage[];
+
+  ctaLabel?: string;
+
+  ctaUrl?: string;
 }

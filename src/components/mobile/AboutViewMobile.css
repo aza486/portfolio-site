@@ -1,0 +1,81 @@
+.about-mobile{
+
+    min-height:100vh;
+
+    padding:2.5rem;
+
+    background:var(--color-background);
+
+    color:var(--color-text);
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:2rem;
+
+}
+
+
+
+.mobile-close{
+
+    align-self:flex-end;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease;
+
+}
+
+.mobile-close:hover{
+
+  transform:scale(1.08) rotate(90deg);
+}
+
+
+
+.about-mobile h2{
+
+    color:var(--color-accent-green);
+
+    font-family:var(--font-display);
+
+}
+
+
+
+.about-mobile p{
+
+    line-height:1.6;
+
+}
+
+
+
+.mobile-techstack{
+
+    margin-top:1rem;
+
+}
+
+.mobile-techstack .tech-icon {
+    height: 34px;
+}
+
+.mobile-techstack .tech-swiper {
+    width: 100%;
+}
+
+.mobile-techstack .tech-slide {
+    width: auto;
+}

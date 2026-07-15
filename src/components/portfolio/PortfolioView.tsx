@@ -140,9 +140,18 @@ function PortfolioView({ project }: PortfolioViewProps) {
 
         </section>
 
-        <button className="github-button">
-          Code auf GitHub →
-        </button>
+          {project.ctaUrl && (
+
+            <a
+              className="project-button"
+              href={project.ctaUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.ctaLabel}
+            </a>
+
+          )}
 
       </aside>
 

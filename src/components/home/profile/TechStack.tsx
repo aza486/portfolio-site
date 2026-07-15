@@ -10,6 +10,7 @@ interface TechStackProps {
   compact?: boolean;
   showTitle?: boolean;
   items?: TechStackItem[];
+  marquee?: boolean;
 }
 
 function TechStack({
@@ -17,105 +18,138 @@ function TechStack({
   showTitle = true,
   items,
 }: TechStackProps) {
+
   const restartTimer = useRef<number | null>(null);
   const swiperRef = useRef<any>(null);
+
+
+  //
+  // PORTFOLIO MARQUEE
+  //
+
   if (compact) {
 
-  const displayItems = [
-    ...(items ?? []),
-    ...(items ?? []),
-  ];
+    const displayItems = [
+      ...(items ?? []),
+      ...(items ?? []),
+    ];
 
-  return (
-    <section className="tech-stack">
+    return (
 
-      <div className="tech-marquee">
+      <section className="tech-stack">
 
-        <div className="tech-marquee-track">
+        <div className="tech-marquee">
 
-          {displayItems.map((tech, index) => (
+          <div className="tech-marquee-track">
 
-            <div
-              key={`${tech.name}-${index}`}
-              className="tech-slide"
-            >
-              <img
-                src={tech.icon}
-                alt={tech.name}
-                className="tech-icon"
-                style={{
-                  transform: `scale(${tech.scale})`,
-                }}
-              />
-            </div>
+            {displayItems.map((tech, index) => (
 
-          ))}
+              <div
+                key={`${tech.name}-${index}`}
+                className="tech-slide"
+              >
+
+                <img
+                  src={tech.icon}
+                  alt={tech.name}
+                  className="tech-icon"
+                  style={{
+                    transform: `scale(${tech.scale})`,
+                  }}
+                />
+
+              </div>
+
+            ))}
+
+          </div>
 
         </div>
 
-      </div>
+      </section>
 
-    </section>
-  );
-}
+    );
+
+  }
+
+  //
+  // DESKTOP HOME
+  //
+
   return (
-    
-    <section className="tech-stack">
-        {showTitle && <h2>Techstack</h2>}
 
-        <Swiper 
-          modules={[Autoplay]}
-          className={`tech-swiper ${compact ? "tech-swiper-compact" : ""}`}
-          slidesPerView="auto"
-          spaceBetween={compact ? 18 : 36}
-          loop
-          speed={compact ? 1500 : 2000}
-          grabCursor={true}
-          allowTouchMove={true}
-          simulateTouch={true}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: false,
-            waitForTransition: true,
-          
-          }}
-          onSwiper={(swiper) => {
+    <section className="tech-stack">
+
+      {showTitle && <h2>Techstack</h2>}
+
+      <Swiper
+        modules={[Autoplay]}
+        className={`tech-swiper ${compact ? "tech-swiper-compact" : ""}`}
+        slidesPerView="auto"
+        spaceBetween={compact ? 18 : 36}
+        loop
+        speed={compact ? 1500 : 2000}
+        grabCursor
+        allowTouchMove
+        simulateTouch
+
+        autoplay={{
+          delay: 0,
+          disableOnInteraction: false,
+          pauseOnMouseEnter: false,
+          waitForTransition: true,
+        }}
+
+        onSwiper={(swiper) => {
           swiperRef.current = swiper;
-          }}
-          onTouchStart={() => {
+        }}
+
+        onTouchStart={() => {
+
           swiperRef.current?.autoplay.pause();
 
           if (restartTimer.current) {
             clearTimeout(restartTimer.current);
           }
-         }}
-         onTouchEnd={() => {
+
+        }}
+
+        onTouchEnd={() => {
+
           restartTimer.current = window.setTimeout(() => {
             swiperRef.current?.autoplay.resume();
           }, 3000);
-          }}
-          
-        >
-          {(items ?? techStack).map((tech) => (
-            <SwiperSlide
-              key={tech.name}
-              className="tech-slide"
-            >
-              <img
-                src={tech.icon}
-                alt={tech.name}
-                className="tech-icon"
-                style={{
-                  transform: `scale(${tech.scale})`,
-                }}
-              />
-            </SwiperSlide>
-          ))}
 
-        </Swiper>
+        }}
+
+      >
+
+        {(items ?? techStack).map((tech) => (
+
+          <SwiperSlide
+            key={tech.name}
+            className="tech-slide"
+          >
+
+            <img
+              src={tech.icon}
+              alt={tech.name}
+              className="tech-icon"
+              style={{
+                transform: `scale(${tech.scale})`,
+              }}
+            />
+
+          </SwiperSlide>
+
+        ))}
+
+      </Swiper>
+
     </section>
+
   );
+
 }
 
 export default TechStack;
