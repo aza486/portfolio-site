@@ -36,18 +36,14 @@ function PortfolioViewMobile({
       <Swiper
         modules={[Pagination, Autoplay]}
         className="portfolio-mobile-swiper"
-
         pagination={{
           clickable: true,
         }}
-
         autoplay={{
           delay: 7000,
           disableOnInteraction: false,
         }}
-
         loop
-
         spaceBetween={20}
       >
 
@@ -67,15 +63,11 @@ function PortfolioViewMobile({
       </Swiper>
 
       <div className="portfolio-mobile-caption">
-
         {project.images[0].title}
-
       </div>
 
       <p className="portfolio-mobile-description">
-
         {project.shortDescription}
-
       </p>
 
       <section className="portfolio-mobile-section">
@@ -86,7 +78,9 @@ function PortfolioViewMobile({
 
           {project.responsibilities.map((item) => (
 
-            <li key={item}>{item}</li>
+            <li key={item}>
+              {item}
+            </li>
 
           ))}
 
@@ -102,7 +96,9 @@ function PortfolioViewMobile({
 
           {project.features.map((item) => (
 
-            <li key={item}>{item}</li>
+            <li key={item}>
+              {item}
+            </li>
 
           ))}
 

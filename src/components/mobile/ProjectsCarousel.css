@@ -1,0 +1,71 @@
+.projects-carousel{
+
+    width:100%;
+
+    margin-top:1rem;
+}
+
+.projects-carousel-card{
+
+    width:100%;
+
+    background:none;
+
+    border:none;
+
+    padding:0;
+
+    cursor:pointer;
+}
+
+.projects-carousel-card h3{
+
+    margin-bottom:1rem;
+
+    color:white;
+
+    text-align:left;
+
+    font-family:var(--font-display);
+
+    font-size:1.8rem;
+
+    font-weight:400;
+}
+
+.projects-carousel-card img{
+
+    width:100%;
+
+    aspect-ratio:16/9;
+
+    object-fit:cover;
+
+    display:block;
+
+    border-radius:8px;
+
+    border:2px solid rgba(255,255,255,.8);
+}
+
+.projects-carousel .swiper-pagination{
+
+    position:relative;
+
+    margin-top:1rem;
+}
+
+.projects-carousel .swiper-pagination-bullet{
+
+    width:14px;
+    height:14px;
+
+    opacity:1;
+
+    background:white;
+}
+
+.projects-carousel .swiper-pagination-bullet-active{
+
+    background:var(--color-accent-red);
+}

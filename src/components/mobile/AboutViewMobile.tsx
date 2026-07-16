@@ -1,6 +1,7 @@
 import "./AboutViewMobile.css";
 
 import TechStack from "../home/profile/TechStack";
+import ProjectsCarousel from "./ProjectsCarousel";
 
 import type { MobileViewState } from "../../types/viewState";
 
@@ -44,6 +45,16 @@ function AboutViewMobile({
 
         <TechStack
           showTitle={false}
+        />
+
+      </section>
+
+      <section className="mobile-projects">
+
+        <h3>Projekte</h3>
+
+        <ProjectsCarousel
+          onProjectClick={() => onNavigate("projects")}
         />
 
       </section>

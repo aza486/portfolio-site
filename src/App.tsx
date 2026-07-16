@@ -18,6 +18,18 @@ import Overlay from "./components/shared/Overlay";
 function App() {
   const [mobileView, setMobileView] =
   useState<MobileViewState>("home");
+
+  const [portfolioOrigin, setPortfolioOrigin] =
+  useState<MobileViewState>("home");
+ 
+  const goBackMobile = () => {
+
+    setMobileView(portfolioOrigin);
+
+  };
+
+
+
     useEffect(() => {
 
     const handleResize = () => {
@@ -63,7 +75,7 @@ function App() {
 
       {mobileView === "about" && (
         <AboutViewMobile
-          onNavigate={setMobileView}
+            onNavigate={setMobileView}
         />
       )}
 
@@ -71,17 +83,22 @@ function App() {
         <ProjectsViewMobile
           onNavigate={setMobileView}
           onProjectSelect={(project) => {
-            setSelectedProject(project);
-            setMobileView("portfolio");
+
+              setSelectedProject(project);
+
+              setPortfolioOrigin("projects");
+
+              setMobileView("portfolio");
+
           }}
-        />
+                  />
       )}
 
       {mobileView === "portfolio" &&
         selectedProject && (
           <PortfolioViewMobile
             project={selectedProject}
-            onBack={() => setMobileView("projects")}
+            onBack={goBackMobile}
           />
         )}
 
