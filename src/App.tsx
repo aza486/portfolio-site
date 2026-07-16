@@ -12,6 +12,7 @@ import HomeViewMobile from "./components/mobile/HomeViewMobile";
 import ProjectsViewMobile from "./components/mobile/ProjectsViewMobile";
 import AboutViewMobile from "./components/mobile/AboutViewMobile";
 import PortfolioViewMobile from "./components/mobile/PortfolioViewMobile";
+import ContactViewMobile from "./components/mobile/ContactViewMobile";
 
 import Overlay from "./components/shared/Overlay";
 
@@ -101,6 +102,14 @@ function App() {
             onBack={goBackMobile}
           />
         )}
+
+        {mobileView === "contact" && (
+
+          <ContactViewMobile
+              onNavigate={setMobileView}
+          />
+
+      )}
 
     </>
 

@@ -1,0 +1,109 @@
+.contact-mobile{
+
+    min-height:100vh;
+
+    background:var(--color-background);
+
+    padding:2rem;
+
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-mobile h2{
+
+    margin-top:2rem;
+    margin-bottom:2.5rem;
+
+    color:var(--color-accent-green);
+
+    font-family:var(--font-display);
+    font-size:2.2rem;
+    font-weight:400;
+}
+
+.contact-mobile-list{
+
+    display:flex;
+    flex-direction:column;
+
+    gap:1.4rem;
+}
+
+.contact-mobile-item{
+
+    display:flex;
+    align-items:center;
+
+    gap:1.2rem;
+
+    text-decoration:none;
+
+    color:white;
+
+    transition:.2s;
+}
+
+.contact-mobile-item:active{
+
+    transform:scale(.98);
+}
+
+.contact-mobile-icon{
+
+    width:58px;
+    height:58px;
+
+    border-radius:50%;
+
+    background:var(--color-accent-darkblue);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+
+    font-size:1.45rem;
+
+    flex-shrink:0;
+}
+
+.contact-mobile-text{
+
+    display:flex;
+    flex-direction:column;
+}
+
+.contact-mobile-text h3{
+
+    margin:0;
+
+    font-size:1.6rem;
+
+    font-weight:700;
+
+    color:white;
+}
+
+.contact-mobile-text p{
+
+    margin-top:.15rem;
+
+    color:#d4d4d4;
+
+    font-size:.95rem;
+}
+
+.contact-mobile-portrait{
+
+    width:100%;
+
+    margin-top:auto;
+
+    display:block;
+
+    pointer-events:none;
+
+    user-select:none;
+}
