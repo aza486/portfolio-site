@@ -41,7 +41,7 @@ function AboutViewMobile({
 
       <section className="mobile-techstack">
 
-        <h3>Techstack</h3>
+        <h2>Techstack</h2>
 
         <TechStack
           showTitle={false}
@@ -51,7 +51,7 @@ function AboutViewMobile({
 
       <section className="mobile-projects">
 
-        <h3>Projekte</h3>
+        <h2>Projekte</h2>
 
         <ProjectsCarousel
           onProjectClick={() => onNavigate("projects")}

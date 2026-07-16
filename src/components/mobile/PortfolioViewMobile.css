@@ -1,6 +1,6 @@
 .portfolio-mobile{
 
-    min-height:100vh;
+    min-height:100dvh;
 
     background:var(--color-background);
 
@@ -19,8 +19,8 @@
     color:var(--color-accent-red);
 
     font-family:var(--font-display);
-    font-size:2rem;
-    font-weight:400;
+    font-size:var(--fs-h2);
+    font-weight:var(--font-weight-normal);
 
     line-height:1.2;
 }

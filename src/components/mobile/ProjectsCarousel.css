@@ -2,7 +2,7 @@
 
     width:100%;
 
-    margin-top:1rem;
+    margin-top:1.5rem;
 }
 
 .projects-carousel-card{
@@ -28,9 +28,9 @@
 
     font-family:var(--font-display);
 
-    font-size:1.8rem;
+    font-size: var(--fs-h3);
 
-    font-weight:400;
+    font-weight:var(--font-display);
 }
 
 .projects-carousel-card img{

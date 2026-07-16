@@ -1,6 +1,6 @@
 .projects-mobile {
 
-    min-height: 100vh;
+    min-height: 100dvh;
 
     background: var(--color-background);
 
@@ -17,8 +17,8 @@
     color: var(--color-accent-green);
 
     font-family: var(--font-display);
-    font-size: 2.2rem;
-    font-weight: 400;
+    font-size: var(--fs-h2);
+    font-weight: var(--font-weight-normal);
 }
 
 .projects-mobile-list {
@@ -51,7 +51,7 @@
 
     font-family: var(--font-display);
 
-    font-size: 1.7rem;
+    font-size: var(--fs-h3);
 
     text-align: left;
 

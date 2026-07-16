@@ -1,6 +1,6 @@
 .home-mobile{
 
-    min-height:100vh;
+    min-height:100dvh;
 
     display:flex;
 
@@ -92,5 +92,33 @@
     transform:translateY(-4px);
 
     background:var(--color-accent-red);
+
+}
+
+
+@media (max-width:767px){
+
+.hero-section {
+    margin-left: 0;
+}
+
+.hero-title{
+    line-height: 1.2;
+}
+
+.hero-section{
+
+    flex:1;
+}
+
+.mobile-portrait-wrapper{
+
+    flex:2;
+}
+
+.mobile-navigation{
+
+    flex:1;
+}
 
 }

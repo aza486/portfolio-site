@@ -1,6 +1,6 @@
 .about-mobile{
 
-    min-height:100vh;
+    min-height:100dvh;
 
     padding:2.5rem;
 
@@ -12,7 +12,7 @@
 
     flex-direction:column;
 
-    gap:2rem;
+    gap: var(--space-sm);
 
 }
 
@@ -48,8 +48,11 @@
 
     color:var(--color-accent-green);
 
+    font-size: var(--fs-h2);
+
     font-family:var(--font-display);
 
+    font-weight: var(--font-display);
 }
 
 
@@ -62,9 +65,17 @@
 
 
 
+
 .mobile-techstack{
 
-    margin-top:1rem;
+    margin-top:rem;
+
+}
+
+.mobile-techstack .tech-stack{
+
+    margin-top:0.5rem;
+    width: inherit;
 
 }
 
