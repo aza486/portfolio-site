@@ -2,7 +2,7 @@
 
     min-height:100dvh;
 
-    padding:2.5rem;
+    padding: var(--space-md);
 
     background:var(--color-background);
 
@@ -33,6 +33,7 @@
     cursor:pointer;
 
     transition:
+    
     transform .2s ease;
 
 }
