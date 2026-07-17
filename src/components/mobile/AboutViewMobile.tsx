@@ -15,7 +15,7 @@ function AboutViewMobile({
 
   return (
 
-    <section className="about-mobile">
+    <section className="about-mobile view-animation">
 
       <button
         className="mobile-close"

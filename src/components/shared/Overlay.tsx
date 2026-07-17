@@ -44,8 +44,8 @@ function Overlay({
           onClose();
         }}
       >
-    <div
-      className={`overlay-content overlay-${size}`}
+      <div
+        className={`overlay-content overlay-${size} view-animation`}
         onClick={(e) => e.stopPropagation()}
       >
         <button

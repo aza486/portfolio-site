@@ -43,6 +43,17 @@
     gap: 1rem;
 
     padding: 0;
+
+    transition:
+        transform .2s ease,
+        border-color .2s ease;
+}
+
+
+.project-mobile-card:active{
+
+    transform:scale(.985);
+
 }
 
 .project-mobile-card h3 {
@@ -76,8 +87,6 @@
 }
 
 .project-mobile-card:hover img {
-
-    transform: scale(.985);
 
     border-color: var(--color-accent-red);
 

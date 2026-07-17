@@ -84,13 +84,22 @@
     cursor:pointer;
 
     transition:
-        border-color .25s,
-        color .25s,
-        transform .25s,
-        background .25s;
+        border-color .18s ease,
+        color .18s ease,
+        transform .18s ease,
+        background .18s ease;
 
 }
 
+.mobile-nav-button:active{
+
+    transform:scale(.93);
+
+    color:var(--color-accent-red);
+
+    border-color:var(--color-accent-red);
+
+}
 
 
 .mobile-nav-button:hover{

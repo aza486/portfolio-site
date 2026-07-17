@@ -23,7 +23,7 @@ function ContactViewMobile({
 
   return (
 
-    <section className="contact-mobile">
+    <section className="contact-mobile view-animation">
 
       <button
         className="mobile-close"

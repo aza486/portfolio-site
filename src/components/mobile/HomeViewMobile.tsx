@@ -22,7 +22,7 @@ function HomeViewMobile({
   setMobileView,
 }: HomeViewMobileProps) {
   return (
-    <div className="home-mobile">
+    <div className="home-mobile view-animation">
 
       <HeroSection />
 
@@ -40,7 +40,7 @@ function HomeViewMobile({
 
         <button
           className="mobile-nav-button"
-          onClick={() => setMobileView("about")}
+          onClick={()  => setMobileView("about")}
         >
           <FaUser />
         </button>

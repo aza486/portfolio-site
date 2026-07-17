@@ -22,7 +22,7 @@ function PortfolioViewMobile({
 
   return (
 
-    <section className="portfolio-mobile">
+    <section className="portfolio-mobile view-animation">
 
       <button
         className="mobile-close"

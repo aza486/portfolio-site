@@ -33,14 +33,27 @@
     cursor:pointer;
 
     transition:
-    
-    transform .2s ease;
+    transform .2s ease,
+    color .2s ease;
 
 }
 
 .mobile-close:hover{
 
-  transform:scale(1.08) rotate(90deg);
+    color:var(--color-accent-red);
+
+    transform:rotate(90deg);
+
+}
+
+.mobile-close:active{
+
+    color:var(--color-accent-red);
+
+    transform:
+        rotate(90deg)
+        scale(.9);
+
 }
 
 

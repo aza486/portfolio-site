@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import "./styles/animations.css";
 
 import type { ViewState, MobileViewState } from "./types/viewState";
 import type { Project } from "./types/project";

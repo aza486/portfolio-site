@@ -17,7 +17,7 @@ function ProjectsViewMobile({
 
   return (
 
-    <section className="projects-mobile">
+    <section className="projects-mobile view-animation">
 
       <button
         className="mobile-close"
