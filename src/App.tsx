@@ -21,12 +21,15 @@ function App() {
   const [mobileView, setMobileView] =
   useState<MobileViewState>("home");
 
+  const [isLeaving, setIsLeaving] =
+    useState(false);
+
   const [portfolioOrigin, setPortfolioOrigin] =
   useState<MobileViewState>("home");
  
   const goBackMobile = () => {
 
-    setMobileView(portfolioOrigin);
+    navigateMobile(portfolioOrigin);
 
   };
 
@@ -45,6 +48,28 @@ function App() {
 
   }, []);
 
+  const navigateMobile = (
+    nextView: MobileViewState
+) => {
+
+    if (isLeaving) return;
+
+    setIsLeaving(true);
+
+    window.setTimeout(() => {
+
+        setMobileView(nextView);
+
+        requestAnimationFrame(() => {
+
+            setIsLeaving(false);
+
+        });
+
+    }, 250);
+
+};
+
   const [isMobile, setIsMobile] =
   useState(window.innerWidth <= 768);
 
@@ -62,35 +87,40 @@ function App() {
 
   return isMobile ? (
 
-    <>
+  <div key={mobileView} className={`app-view ${isLeaving ? "view-leave" : ""}`}>
 
       {mobileView === "home" && (
         <HomeViewMobile
           mobileView={mobileView}
-          setMobileView={setMobileView}
+          setMobileView={navigateMobile}
           onProjectClick={(project) => {
-            setSelectedProject(project);
-            setMobileView("portfolio");
+
+              setSelectedProject(project);
+
+              setPortfolioOrigin("home");
+
+              navigateMobile("portfolio");
+
           }}
         />
       )}
 
       {mobileView === "about" && (
         <AboutViewMobile
-            onNavigate={setMobileView}
+            onNavigate={navigateMobile}
         />
       )}
 
       {mobileView === "projects" && (
         <ProjectsViewMobile
-          onNavigate={setMobileView}
+          onNavigate={navigateMobile}
           onProjectSelect={(project) => {
 
               setSelectedProject(project);
 
               setPortfolioOrigin("projects");
 
-              setMobileView("portfolio");
+              navigateMobile("portfolio");
 
           }}
                   />
@@ -107,12 +137,12 @@ function App() {
         {mobileView === "contact" && (
 
           <ContactViewMobile
-              onNavigate={setMobileView}
+              onNavigate={navigateMobile}
           />
 
       )}
 
-    </>
+    </div>
 
   ) : (
 

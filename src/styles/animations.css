@@ -1,10 +1,16 @@
-.view-animation{
+.view-enter{
 
-    animation:viewFade .28s ease;
+    animation:viewEnter .28s ease forwards;
 
 }
 
-@keyframes viewFade{
+.view-leave{
+
+    animation:viewLeave .18s ease forwards;
+
+}
+
+@keyframes viewEnter{
 
     from{
 
@@ -21,6 +27,28 @@
 
         transform:
             translateY(0);
+
+    }
+
+}
+
+@keyframes viewLeave{
+
+    from{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+
+    }
+
+    to{
+
+        opacity:0;
+
+        transform:
+            translateY(-12px);
 
     }
 
