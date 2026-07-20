@@ -1,11 +1,19 @@
 import "./HeroSection.css";
 
-function HeroSection() {
+interface HeroSectionProps {
+  playIntro?: boolean;
+}
+
+function HeroSection({
+  playIntro,
+}: HeroSectionProps) {
   return (
     <div className="hero-section" >
-      <p className="hero-name">Daniel Podjapolski</p>
+      <p  className={`hero-name ${ playIntro === true ? "intro-name" : "" }`}>
+        Daniel Podjapolski
+        </p>
 
-      <h1 className="hero-title">
+      <h1 className={`hero-title ${ playIntro === true ? "intro-title" : "" }`}>
         Hallo, ich bin Designer&Developer
       </h1>
     </div>

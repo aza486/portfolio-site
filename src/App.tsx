@@ -71,7 +71,21 @@ function App() {
 };
 
   const [isMobile, setIsMobile] =
-  useState(window.innerWidth <= 768);
+  useState(window.innerWidth <= 1000);
+
+  const [playHomeIntro, setPlayHomeIntro] = useState(true);
+
+  useEffect(() => {
+
+  if (!playHomeIntro) return;
+
+  const timer = window.setTimeout(() => {
+    setPlayHomeIntro(false);
+  }, 2500);
+
+  return () => clearTimeout(timer);
+
+}, [playHomeIntro]);
 
   const [activeOverlay, setActiveOverlay] =
     useState<ViewState | null>(null);
@@ -91,6 +105,8 @@ function App() {
 
       {mobileView === "home" && (
         <HomeViewMobile
+          playIntro={playHomeIntro}
+          onIntroFinished={() => setPlayHomeIntro(false)}
           mobileView={mobileView}
           setMobileView={navigateMobile}
           onProjectClick={(project) => {
