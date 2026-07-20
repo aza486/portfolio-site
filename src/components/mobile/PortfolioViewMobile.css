@@ -135,9 +135,9 @@
 
 .portfolio-mobile .project-button{
 
-    width:100%;
+    width:auto;
 
-    min-height:56px;
+    margin: auto;
 
     border:none;
 
@@ -196,4 +196,17 @@
 .portfolio-mobile .swiper-pagination-bullet-active{
 
     background:var(--color-accent-red);
+}
+
+@media (min-width:600px) and (max-width:767px) {
+
+    .portfolio-mobile{
+        width:90%;
+        margin:auto;
+        margin-top:1rem;
+    }
+
+    .portfolio-mobile .mobile-close {
+        top: 1.6rem;
+  }
 }

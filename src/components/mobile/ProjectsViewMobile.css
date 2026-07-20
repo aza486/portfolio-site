@@ -114,3 +114,18 @@
 .mobile-close:hover {
     transform: rotate(90deg);
 }
+
+
+@media (min-width:600px) and (max-width:767px) {
+
+    .projects-mobile{
+        width:90%;
+        margin:auto;
+        margin-top:1rem;
+    }
+
+    .projects-mobile .mobile-close {
+        top: 1.6rem;
+    }
+
+}

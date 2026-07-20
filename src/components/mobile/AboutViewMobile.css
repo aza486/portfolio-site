@@ -104,3 +104,20 @@
 .mobile-techstack .tech-slide {
     width: auto;
 }
+
+
+
+@media (min-width:600px) and (max-width:767px) {
+
+    .about-mobile{
+        width:90%;
+        margin:auto;
+        margin-top:1rem;
+    }
+
+    .about-mobile .mobile-close {
+        top: 2.6rem;
+        right: 4rem;
+    }
+
+}

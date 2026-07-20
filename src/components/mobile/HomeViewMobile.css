@@ -120,7 +120,7 @@
 }
 
 .hero-title{
-    line-height: 1.2;
+    line-height: 1.04;
 }
 
 .hero-section{
@@ -136,6 +136,43 @@
 .mobile-navigation{
 
     flex:1;
+}
+
+}
+
+@media (min-width:600px) and (max-width:767px) {
+
+.home-mobile{
+
+    gap:0;
+    max-width:700px;
+    margin:0 auto;
+
+}
+
+.hero-title{
+    margin-bottom: 3rem;
+}
+
+.hero-section{
+
+    gap:1;
+    flex:0;
+    margin-left: 2rem;
+}
+
+.mobile-portrait-wrapper{
+
+width:min(50vw,420px);
+margin-inline: auto;
+
+}
+
+.mobile-navigation{
+
+gap:2.5rem;
+margin-top:1.5rem;
+
 }
 
 }

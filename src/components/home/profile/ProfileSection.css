@@ -108,11 +108,9 @@
 
 .tech-marquee {
 
-    width: 250px;
+    width: 100%;
 
     overflow: hidden;
-
-    margin-left: 20px;
 }
 
 .tech-marquee-track {
@@ -156,4 +154,14 @@
         transform: translateX(-50%);
     }
 
+}
+
+@media (min-width: 768px) {
+
+.tech-marquee {
+    width: calc(100% - 20px);
+
+    margin-left: 20px;
+}
+  
 }

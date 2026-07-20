@@ -215,3 +215,28 @@
     }
 
 }
+
+@media (min-width:600px) and (max-width:767px) {
+
+    .contact-mobile{
+        width:90%;
+        margin:auto;
+        margin-top:1rem;
+    }
+    
+    .contact-mobile .mobile-close{
+        right:4rem;
+        top: 2.6rem;
+
+    }
+
+    .contact-mobile-text h3 {
+        font-size: var(--fs-body)
+    }
+
+    .contact-mobile-portrait{
+        width: 70%;
+        margin: auto;
+        margin-top: 1rem;
+    }
+}
