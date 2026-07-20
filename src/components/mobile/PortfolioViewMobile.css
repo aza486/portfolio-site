@@ -198,7 +198,7 @@
     background:var(--color-accent-red);
 }
 
-@media (min-width:600px) and (max-width:767px) {
+@media (min-width:600px) and (max-width:1000px) {
 
     .portfolio-mobile{
         width:90%;

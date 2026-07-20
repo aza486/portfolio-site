@@ -216,7 +216,7 @@
 
 }
 
-@media (min-width:600px) and (max-width:767px) {
+@media (min-width:600px) and (max-width:1000px) {
 
     .contact-mobile{
         width:90%;

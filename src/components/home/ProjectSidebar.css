@@ -20,3 +20,13 @@
   justify-content: space-between;
   gap: 1.6rem;
 }
+
+@media (min-width:1001px) and (max-width:1279px) {
+
+.project-sidebar-list {
+  flex: 0;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+}

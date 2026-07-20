@@ -113,7 +113,7 @@
 }
 
 
-@media (max-width:767px){
+@media (max-width:1000px){
 
 .hero-section {
     margin-left: 0;
@@ -140,7 +140,7 @@
 
 }
 
-@media (min-width:600px) and (max-width:767px) {
+@media (min-width:600px) and (max-width:1000px) {
 
 .home-mobile{
 
