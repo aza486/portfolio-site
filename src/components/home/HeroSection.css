@@ -23,9 +23,13 @@
 
     filter:blur(8px);
 
+}
+
+.intro-title.show{
+
     animation:
 
-        heroReveal .9s cubic-bezier(.22,.61,.36,1) forwards;
+        heroReveal 1.2s cubic-bezier(.22,.61,.36,1) forwards;
 
 }
 
@@ -37,11 +41,13 @@
 
     filter:blur(6px);
 
+}
+
+.intro-name.show{
+
     animation:
 
-        heroName .55s ease forwards;
-
-    animation-delay:.15s;
+        heroName .8s ease forwards;
 
 }
 

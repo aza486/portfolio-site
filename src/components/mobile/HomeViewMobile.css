@@ -125,7 +125,7 @@
 
 .hero-section{
 
-    flex:1;
+    flex:0;
 }
 
 .mobile-portrait-wrapper{
@@ -183,18 +183,17 @@ margin-top:1.5rem;
     opacity:0;
 
     transform:
-
         translateY(24px)
-
         scale(.92);
 
     filter:blur(8px);
 
+}
+
+.intro-portrait.show{
+
     animation:
-
         portraitIntro .8s cubic-bezier(.22,.61,.36,1) forwards;
-
-    animation-delay:.45s;
 
 }
 
@@ -227,23 +226,24 @@ margin-top:1.5rem;
 }
 
 
+.intro-button{
+
+    opacity:1;
+
+    animation:
+        buttonIntro .45s ease forwards;
+
+}
+
 .intro-button-hidden{
 
     opacity:0;
 
     transform:
-
         translateY(18px)
-
         scale(.9);
 
-}
-
-.intro-button{
-
-    animation:
-
-        buttonIntro .45s ease forwards;
+    pointer-events:none;
 
 }
 

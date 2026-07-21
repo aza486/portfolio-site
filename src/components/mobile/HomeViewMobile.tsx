@@ -35,66 +35,98 @@ function HomeViewMobile({
   onIntroFinished,
 }: HomeViewMobileProps) {
 
-  const [heroFrame, setHeroFrame] = useState(0);
-  const [showButtons, setShowButtons] = useState(!playIntro);
+const [heroFrame, setHeroFrame] = useState(0);
 
-  /*
-   * Buttons erscheinen erst nach der Intro.
-   */
+const [showTitle, setShowTitle] = useState(!playIntro);
+
+const [showName, setShowName] = useState(!playIntro);
+
+const [showPortrait, setShowPortrait] = useState(!playIntro);
+
+const [showButtons, setShowButtons] = useState(!playIntro);
+
+
+
 useEffect(() => {
 
-  if (!playIntro) {
-    setShowButtons(true);
-    return;
-  }
+  if (!playIntro) return;
 
-  const showTimer = window.setTimeout(() => {
-    setShowButtons(true);
-  }, 2200);
+  const timers: number[] = [];
 
-  const finishTimer = window.setTimeout(() => {
-    onIntroFinished();
-  }, 2700); // 2200 ms + 450 ms + kleiner Puffer
+  // 1. Portrait einblenden
+  timers.push(
+    window.setTimeout(() => {
+      setShowPortrait(true);
+    }, 0)
+  );
+
+  // 2. Winken starten
+  timers.push(
+    window.setTimeout(() => {
+
+      const sequence = [0, 1, 2, 1, 2, 0];
+
+      let index = 0;
+
+      const interval = window.setInterval(() => {
+
+        index++;
+
+        if (index >= sequence.length) {
+          clearInterval(interval);
+          return;
+        }
+
+        setHeroFrame(sequence[index]);
+
+      }, 400);
+
+    }, 0)
+  );
+
+  // 3. Titel
+  timers.push(
+    window.setTimeout(() => {
+      setShowTitle(true);
+    }, 1500)
+  );
+
+  // 4. Name
+  timers.push(
+    window.setTimeout(() => {
+      setShowName(true);
+    }, 3500)
+  );
+
+  // 5. Buttons
+  timers.push(
+    window.setTimeout(() => {
+      setShowButtons(true);
+    }, 4000)
+  );
+
+  // Intro abgeschlossen
+  timers.push(
+    window.setTimeout(() => {
+      onIntroFinished();
+    }, 4000)
+  );
 
   return () => {
-    clearTimeout(showTimer);
-    clearTimeout(finishTimer);
+    timers.forEach(clearTimeout);
   };
 
 }, [playIntro, onIntroFinished]);
 
-  /*
-   * Winken
-   */
-  useEffect(() => {
-
-    if (!playIntro) return;
-
-    const sequence = [0, 1, 2, 1, 2, 0];
-
-    let index = 0;
-
-    const interval = window.setInterval(() => {
-
-      index++;
-
-      if (index >= sequence.length) {
-        clearInterval(interval);
-        return;
-      }
-
-      setHeroFrame(sequence[index]);
-
-    }, 300);
-
-    return () => clearInterval(interval);
-
-  }, [playIntro]);
 
   return (
     <div className="home-mobile view-animation">
 
-      <HeroSection playIntro={playIntro} />
+      <HeroSection 
+      playIntro={playIntro}
+      showTitle={showTitle} 
+      showName={showName}
+      />
 
       <div className="mobile-portrait-wrapper">
 
@@ -102,8 +134,11 @@ useEffect(() => {
           src={heroImages[heroFrame]}
           alt="Daniel"
           className={`mobile-portrait ${
-            playIntro ? "intro-portrait" : ""
-          }`}
+            playIntro
+                ? showPortrait
+                ? "intro-portrait show"
+                : "intro-portrait"
+              : "" }`}
         />
 
       </div>

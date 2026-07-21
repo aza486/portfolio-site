@@ -75,18 +75,6 @@ function App() {
 
   const [playHomeIntro, setPlayHomeIntro] = useState(true);
 
-  useEffect(() => {
-
-  if (!playHomeIntro) return;
-
-  const timer = window.setTimeout(() => {
-    setPlayHomeIntro(false);
-  }, 2500);
-
-  return () => clearTimeout(timer);
-
-}, [playHomeIntro]);
-
   const [activeOverlay, setActiveOverlay] =
     useState<ViewState | null>(null);
 
