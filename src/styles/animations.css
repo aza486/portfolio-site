@@ -1,12 +1,12 @@
 .view-enter{
 
-    animation:viewEnter .28s ease forwards;
+    animation:viewEnter .78s ease forwards;
 
 }
 
 .view-leave{
 
-    animation:viewLeave .18s ease forwards;
+    animation:viewLeave .78s ease forwards;
 
 }
 
