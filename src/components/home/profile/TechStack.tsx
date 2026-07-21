@@ -24,6 +24,10 @@ function TechStack({
   const restartTimer = useRef<number | null>(null);
   const swiperRef = useRef<any>(null);
 
+  const isFirefox =
+  typeof navigator !== "undefined" &&
+  navigator.userAgent.includes("Firefox");
+
   const visible =
   timeline === undefined
     ? true
@@ -34,19 +38,39 @@ function TechStack({
   // PORTFOLIO MARQUEE
   //
 
-  if (compact) {
+  const useMarquee = compact || isFirefox;
 
-    const displayItems = [
-      ...(items ?? []),
-      ...(items ?? []),
-    ];
+  if (useMarquee) {
+
+  const marqueeItems = compact
+    ? (items ?? [])
+    : techStack;
+
+  const displayItems = [
+    ...marqueeItems,
+    ...marqueeItems,
+  ];
 
 
     return (
 
-      <section className="tech-stack">
+      <section
+        className={`tech-stack ${
+          visible
+            ? "tech-stack-show"
+            : "tech-stack-hidden"
+        }`}
+      >
 
-        <div className="tech-marquee">
+        {showTitle && <h2>Techstack</h2>}
+
+        <div
+          className={`tech-marquee ${
+            compact
+              ? "tech-marquee-portfolio"
+              : "tech-marquee-home"
+          }`}
+        >
 
           <div className="tech-marquee-track">
 

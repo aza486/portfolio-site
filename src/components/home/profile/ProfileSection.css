@@ -250,3 +250,24 @@
 
 }
 
+/* HOME (Firefox) */
+
+.tech-marquee-home .tech-marquee-track {
+    animation: tech-marquee 40s linear infinite;
+    gap: 36px;
+}
+
+.tech-marquee-home .tech-icon {
+    height: 42px;
+}
+
+/* PORTFOLIO */
+
+.tech-marquee-portfolio .tech-marquee-track {
+    animation: tech-marquee 12s linear infinite;
+    gap: 26px;
+}
+
+.tech-marquee-portfolio .tech-icon {
+    height: 32px;
+}
