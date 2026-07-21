@@ -30,3 +30,31 @@
 }
 
 }
+
+/* ===========================
+   DESKTOP TIMELINE
+   =========================== */
+
+.project-sidebar-hidden {
+  opacity: 0;
+  transform: translateX(30px);
+  pointer-events: none;
+}
+
+.project-sidebar-show {
+  animation: projectSidebarReveal .7s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes projectSidebarReveal {
+
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}

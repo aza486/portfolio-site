@@ -7,6 +7,7 @@ import { techStack } from "../../../data/techStack";
 import type { TechStackItem } from "../../../data/techStack";
 
 interface TechStackProps {
+  timeline?: number;
   compact?: boolean;
   showTitle?: boolean;
   items?: TechStackItem[];
@@ -14,6 +15,7 @@ interface TechStackProps {
 }
 
 function TechStack({
+  timeline,
   compact = false,
   showTitle = true,
   items,
@@ -21,6 +23,11 @@ function TechStack({
 
   const restartTimer = useRef<number | null>(null);
   const swiperRef = useRef<any>(null);
+
+  const visible =
+  timeline === undefined
+    ? true
+    : timeline >= 6;
 
 
   //
@@ -78,7 +85,13 @@ function TechStack({
 
   return (
 
-    <section className="tech-stack">
+    <section
+      className={`tech-stack ${
+        visible
+          ? "tech-stack-show"
+          : "tech-stack-hidden"
+      }`}
+    >
 
       {showTitle && <h2>Techstack</h2>}
 

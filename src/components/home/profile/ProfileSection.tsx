@@ -1,32 +1,39 @@
 import ProfileImage from "./ProfileImage";
-import AboutContent from "../../about/AboutContent";
+import AboutView from "../../about/AboutView";
 import TechStack from "./TechStack";
 import ContactButton from "./ContactButton";
 import "./ProfileSection.css";
 
 interface ProfileSectionProps {
+  timeline?: number;
   onAbout: () => void;
   onContact: () => void;
 }
 
-function ProfileSection({ onAbout, onContact }: ProfileSectionProps) {
+function ProfileSection({
+  timeline, 
+  onAbout, 
+  onContact 
+  }: ProfileSectionProps) {
   return (
     <section className="profile-section">
       <div className="profile-image-layer">
-        <ProfileImage />
+        <ProfileImage timeline={timeline} />
       </div>
 
       <div className="profile-content">
-        <AboutContent />
+        <AboutView timeline={timeline} />
 
-        <TechStack />
+        <TechStack timeline={timeline} />
 
         <div className="profile-actions">
           <button className="profile-about-button" onClick={onAbout}>
             Mehr über mich
           </button>
 
-          <ContactButton onClick={onContact} />
+          <ContactButton 
+            timeline={timeline} 
+            onClick={onContact} />
         </div>
       </div>
     </section>

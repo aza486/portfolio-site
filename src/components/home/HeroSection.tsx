@@ -1,24 +1,45 @@
 import "./HeroSection.css";
 
 interface HeroSectionProps {
-  playIntro?: boolean;
+  timeline?: number;
+
   showTitle?: boolean;
   showName?: boolean;
 }
 
 function HeroSection({
-  playIntro,
+  timeline = 999,
+
   showTitle,
   showName
 }: HeroSectionProps) {
+
+  const titleVisible =
+  timeline !== 999
+    ? timeline >= 3
+    : showTitle;
+
+  const nameVisible =
+  timeline !== 999
+    ? timeline >= 4
+    : showName;
+
   return (
     <div className="hero-section" >
-      <p className={`hero-name ${ playIntro ? showName ? "intro-name show" : "intro-name" : "" }`}>
+        <p className={`hero-name ${
+          nameVisible
+            ? "intro-name show"
+            : "intro-name"
+        }`}>
         Daniel Podjapolski
         </p>
 
       <h1
-  className={`hero-title ${ playIntro ? showTitle ? "intro-title show" : "intro-title" : ""}`}>
+  className={`hero-title ${
+      titleVisible
+        ? "intro-title show"
+        : "intro-title"
+      }`}>
         Hallo, ich bin Designer&Developer
       </h1>
     </div>

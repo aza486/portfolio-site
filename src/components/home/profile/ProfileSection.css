@@ -104,6 +104,37 @@
     0 12px 30px rgba(0,0,0,.35);
 }
 
+/* ===========================
+   DESKTOP TIMELINE
+   =========================== */
+
+.tech-stack-hidden,
+.contact-button-hidden {
+  opacity: 0;
+  transform: translateY(24px);
+  pointer-events: none;
+}
+
+.tech-stack-show,
+.contact-button-show {
+  animation: profileContentReveal .7s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes profileContentReveal {
+
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
 /* ---------- PROJECT TECH MARQUEE ---------- */
 
 .tech-marquee {
@@ -218,3 +249,4 @@
 }
 
 }
+

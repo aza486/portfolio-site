@@ -123,7 +123,6 @@ useEffect(() => {
     <div className="home-mobile view-animation">
 
       <HeroSection 
-      playIntro={playIntro}
       showTitle={showTitle} 
       showName={showName}
       />
