@@ -187,6 +187,16 @@
     user-select:none;
 }
 
+.mobile-close:active{
+
+    color:var(--color-accent-red);
+
+    transform:
+        rotate(90deg)
+        scale(.9);
+
+}
+
 @media (hover:hover){
 
     .contact-mobile-item:hover{

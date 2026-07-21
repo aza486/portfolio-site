@@ -41,6 +41,7 @@ function TechStack({
       ...(items ?? []),
     ];
 
+
     return (
 
       <section className="tech-stack">
@@ -114,7 +115,27 @@ function TechStack({
         }}
 
         onSwiper={(swiper) => {
-          swiperRef.current = swiper;
+
+            swiperRef.current = swiper;
+
+            console.log("initialized", {
+                autoplayRunning: swiper.autoplay?.running,
+                animating: swiper.animating,
+                progress: swiper.progress,
+                translate: swiper.translate,
+            });
+
+            setTimeout(() => {
+
+                console.log("after 2s", {
+                    autoplayRunning: swiper.autoplay?.running,
+                    animating: swiper.animating,
+                    progress: swiper.progress,
+                    translate: swiper.translate,
+                });
+
+            }, 2000);
+
         }}
 
         onTouchStart={() => {

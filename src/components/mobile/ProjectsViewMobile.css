@@ -111,10 +111,14 @@
     transition: transform .2s ease;
 }
 
-.mobile-close:active {
-    transform: rotate(90deg);
+.mobile-close:active{
 
-    color: var(--color-accent-red)
+    color:var(--color-accent-red);
+
+    transform:
+        rotate(90deg)
+        scale(.9);
+
 }
 
 
