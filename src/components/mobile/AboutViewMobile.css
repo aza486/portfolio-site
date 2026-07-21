@@ -38,13 +38,6 @@
 
 }
 
-.mobile-close:hover{
-
-    color:var(--color-accent-red);
-
-    transform:rotate(90deg);
-
-}
 
 .mobile-close:active{
 

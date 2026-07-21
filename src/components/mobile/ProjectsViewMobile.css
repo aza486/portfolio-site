@@ -111,8 +111,10 @@
     transition: transform .2s ease;
 }
 
-.mobile-close:hover {
+.mobile-close:active {
     transform: rotate(90deg);
+
+    color: var(--color-accent-red)
 }
 
 
