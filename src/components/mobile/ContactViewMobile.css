@@ -53,13 +53,13 @@
 
 }
 
-..contact-mobile-item:active{
+.contact-mobile-item:active{
 
     transform:translateX(6px);
 
 }
 
-..contact-mobile-item:active
+.contact-mobile-item:active
 .contact-mobile-icon{
 
     border-color:var(--color-accent-red);
@@ -70,14 +70,14 @@
 
 }
 
-..contact-mobile-item:active
+.contact-mobile-item:active
 .contact-mobile-text h3{
 
     color:var(--color-accent-red);
 
 }
 
-..contact-mobile-item:active
+.contact-mobile-item:active
 .contact-mobile-text p{
 
     opacity:1;
