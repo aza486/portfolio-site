@@ -44,7 +44,7 @@ function ProfileImage({
   const timers = sequence.map((image, index) =>
     window.setTimeout(() => {
       setFrame(image);
-    }, (index + 1) * 180)
+    }, (index + 1) * 400)
   );
 
   return () => timers.forEach(clearTimeout);

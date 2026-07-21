@@ -43,6 +43,8 @@ const [showName, setShowName] = useState(!playIntro);
 
 const [showPortrait, setShowPortrait] = useState(!playIntro);
 
+const [showHello, setShowHello] = useState(!playIntro);
+
 const [showButtons, setShowButtons] = useState(!playIntro);
 
 
@@ -81,35 +83,42 @@ useEffect(() => {
 
       }, 400);
 
-    }, 0)
+    }, 1000)
   );
 
-  // 3. Titel
+  // 3. Hallo
+  timers.push(
+    window.setTimeout(() => {
+      setShowHello(true);
+    }, 1000)
+  );
+
+  // 4. Rest vom Titel
   timers.push(
     window.setTimeout(() => {
       setShowTitle(true);
-    }, 1500)
-  );
-
-  // 4. Name
-  timers.push(
-    window.setTimeout(() => {
-      setShowName(true);
     }, 3500)
   );
 
-  // 5. Buttons
+  // 5. Name
+  timers.push(
+    window.setTimeout(() => {
+      setShowName(true);
+    }, 5500)
+  );
+
+  // 6. Buttons
   timers.push(
     window.setTimeout(() => {
       setShowButtons(true);
-    }, 4000)
+    }, 7000)
   );
 
   // Intro abgeschlossen
   timers.push(
     window.setTimeout(() => {
       onIntroFinished();
-    }, 4000)
+    }, 7000)
   );
 
   return () => {
@@ -123,6 +132,7 @@ useEffect(() => {
     <div className="home-mobile view-animation">
 
       <HeroSection 
+      showHello={showHello}
       showTitle={showTitle} 
       showName={showName}
       />

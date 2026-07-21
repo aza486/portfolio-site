@@ -63,6 +63,7 @@
 
 .overlay-close:hover{
 
-
+  color:var(--color-accent-red);
+  
   transform:scale(1.08) rotate(90deg);
 }
