@@ -8,14 +8,19 @@ import HomeView from "./components/home/HomeView";
 import AboutView from "./components/about/AboutView";
 import PortfolioView from "./components/portfolio/PortfolioView";
 import ContactView from "./components/contact/ContactView";
+import ImpressumView from "./components/home/ImpressView";
+import DatenschutzView from "./components/home/DatenschutzView";
 
 import HomeViewMobile from "./components/mobile/HomeViewMobile";
 import ProjectsViewMobile from "./components/mobile/ProjectsViewMobile";
 import AboutViewMobile from "./components/mobile/AboutViewMobile";
 import PortfolioViewMobile from "./components/mobile/PortfolioViewMobile";
 import ContactViewMobile from "./components/mobile/ContactViewMobile";
+import ImpressViewMobile from "./components/mobile/ImpressViewMobile";
+import DatenschutzViewMobile from "./components/mobile/DatenschutzViewMobile";
 
 import Overlay from "./components/shared/Overlay";
+import Footer from "./components/shared/Footer";
 
 function App() {
   const [mobileView, setMobileView] =
@@ -146,6 +151,27 @@ function App() {
 
       )}
 
+      {mobileView === "impressum" && (
+
+          <ImpressViewMobile
+              onNavigate={navigateMobile}
+          />
+
+      )}
+
+      {mobileView === "datenschutz" && (
+
+          <DatenschutzViewMobile
+              onNavigate={navigateMobile}
+          />
+
+      )}
+
+    <Footer
+        onImpressum={() => navigateMobile("impressum")}
+        onDatenschutz={() => navigateMobile("datenschutz")}
+    />
+
     </div>
 
   ) : (
@@ -158,6 +184,11 @@ function App() {
           setSelectedProject(project);
           setActiveOverlay("portfolio");
         }}
+      />
+
+      <Footer
+        onImpressum={() => setActiveOverlay("impressum")}
+        onDatenschutz={() => setActiveOverlay("datenschutz")}
       />
 
       {activeOverlay === "about" && (
@@ -174,12 +205,41 @@ function App() {
 
       {activeOverlay === "portfolio" &&
         selectedProject && (
-          <Overlay onClose={closeOverlay}>
+          <Overlay
+              size="portfolio"
+              onClose={closeOverlay}
+          >
             <PortfolioView
               project={selectedProject}
             />
           </Overlay>
         )}
+
+      {activeOverlay === "impressum" && (
+
+          <Overlay
+              size="legal"
+              onClose={closeOverlay}
+          >
+
+              <ImpressumView />
+
+          </Overlay>
+
+      )}
+
+      {activeOverlay === "datenschutz" && (
+
+          <Overlay
+              size="legal"
+              onClose={closeOverlay}
+          >
+
+              <DatenschutzView />
+
+          </Overlay>
+
+      )}
     </>
 
   );

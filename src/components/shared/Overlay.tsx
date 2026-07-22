@@ -5,7 +5,7 @@ interface OverlayProps {
   children: React.ReactNode;
   onClose: () => void;
 
-  size?: "portfolio" | "contact";
+  size?: "portfolio" | "contact" | "legal";
 }
 
 function Overlay({

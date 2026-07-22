@@ -1,0 +1,53 @@
+.footer{
+
+    position:fixed;
+
+    right:32px;
+    bottom:24px;
+
+    display:flex;
+    gap:16px;
+
+    z-index:100;
+
+}
+
+.footer button{
+
+    background:none;
+    border:none;
+
+    padding:0;
+
+    color:white;
+
+    font-family:Roboto,sans-serif;
+    font-size:13px;
+
+
+    cursor:pointer;
+
+    transition:opacity .2s ease;
+
+}
+
+.footer button:hover{
+
+  color: var(--color-accent-red)
+
+}
+
+@media (max-width:1000px){
+
+    .footer{
+
+        left:50%;
+        right:auto;
+
+        transform:translateX(-50%);
+
+        bottom:18px;
+
+    }
+
+}

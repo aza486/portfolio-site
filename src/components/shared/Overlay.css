@@ -67,3 +67,11 @@
   
   transform:scale(1.08) rotate(90deg);
 }
+
+.overlay-legal{
+
+    width:min(1200px,92vw);
+
+    height:min(900px,92vh);
+
+}

@@ -3,11 +3,15 @@ export type ViewState =
   | "about"
   | "contact"
   | "portfolio"
-  | "project";
+  | "project"
+  | "impressum"
+  | "datenschutz";
 
   export type MobileViewState =
   | "home"
   | "about"
   | "projects"
   | "portfolio"
-  | "contact";
+  | "contact"
+  | "impressum"
+  | "datenschutz";

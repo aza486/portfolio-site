@@ -1,0 +1,44 @@
+.legal-view{
+
+    width:100%;
+    height:100%;
+
+    box-sizing:border-box;
+
+    padding:56px;
+
+    overflow:auto;
+
+    line-height:1.8;
+
+    background: var(--color-bg-overlay);
+
+}
+
+.legal-view h1{
+
+    font-family:"Black Ops One",sans-serif;
+
+    font-size:2.5rem;
+
+    margin-bottom:50px;
+
+}
+
+.legal-view h2{
+
+    font-size:1.1rem;
+
+    margin-top:38px;
+
+    margin-bottom:12px;
+
+    color:#09BC8A;
+
+}
+
+.legal-view p{
+
+    color:rgba(255,255,255,.85);
+
+}

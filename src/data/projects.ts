@@ -4,7 +4,7 @@ import libreDeskCover from "../assets/projects/KI_Antwort.png";
 import libreDesk2 from "../assets/projects/n8n_Workflow.png";
 import libreDesk3 from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
 
-import photolabCover from "../assets/projects/ProfotoLP.png";
+import photolabCover from "../assets/projects/ProfotoStartseite.png";
 import profoto_editor from "../assets/projects/ProfotoEditor.png";
 import profotoLP from "../assets/projects/ProfotoLP.png";
 import profoto_shopware from "../assets/projects/ProfotoShopware.png";
