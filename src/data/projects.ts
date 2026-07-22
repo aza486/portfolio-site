@@ -2,7 +2,7 @@ import type { Project } from "../types/project";
 
 import libreDeskCover from "../assets/projects/KI_Antwort.png";
 import libreDesk2 from "../assets/projects/n8n_Workflow.png";
-import libreDesk3 from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
+import libreDesk3 from "../assets/projects/VsCode_Docker.png";
 
 import photolabCover from "../assets/projects/ProfotoStartseite.png";
 import profoto_editor from "../assets/projects/ProfotoEditor.png";
@@ -21,7 +21,7 @@ export const projects: Project[] = [
     title: "Libredesk - n8n Workflow",
 
     shortDescription:
-      "Konzept und Umsetzung einer digitalen Produktseite.",
+      "Entwicklung eines KI-gestützten Helpdesks auf Basis von LibreDesk. Ziel war die Automatisierung eingehender Kundenanfragen durch intelligente Ticketanalyse, n8n-Workflows und KI-gestützte Antwortvorschläge.",
 
     responsibilities: [
       "Frontend-Anpassungen mit React",
@@ -52,15 +52,15 @@ export const projects: Project[] = [
     images: [
       {
         src: libreDeskCover,
-        title: "Ticketsystem in Aktion",
+        title: "KI-generierter Antwortsvorschlag im Ticketsystem",
       },
       {
         src: libreDesk2,
-        title: "KI-generierter Antwortsvorschlag",
+        title: "Einblick in n8n-Worklflow zur KI-Antwort",
       },
       {
         src: libreDesk3,
-        title: "n8n Workflow zur Ticketverarbeitung",
+        title: "VSCode UI mit Code zum Individual-Libredesk",
       },
     ],
 
