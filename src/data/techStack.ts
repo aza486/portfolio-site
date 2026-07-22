@@ -9,7 +9,7 @@ import illustrator from "../assets/icons/illustrator.svg";
 import indesign from "../assets/icons/indesign.svg";
 import javascript from "../assets/icons/javascript.svg";
 import n8n from "../assets/icons/n8n.svg";
-import nodejs from "../assets/icons/nodejs.svg";
+import vite from "../assets/icons/vite.svg";
 import photoshop from "../assets/icons/photoshop.svg";
 import postgres from "../assets/icons/postgres.svg";
 import premiere from "../assets/icons/premierepro.svg";
@@ -18,6 +18,8 @@ import shopware from "../assets/icons/shopware.svg";
 import typescript from "../assets/icons/typescript.svg";
 import openai from "../assets/icons/openai.svg";
 import claude from "../assets/icons/claude.svg";
+import django from "../assets/icons/django.svg";
+import python from "../assets/icons/python.svg";
 
 export interface TechStackItem {
 
@@ -45,8 +47,8 @@ export const techStack: TechStackItem[] = [
     scale: 1,
   },
   {
-    name: "Node.js",
-    icon: nodejs,
+    name: "Vite",
+    icon: vite,
     scale: 1,
   },
   {
@@ -127,6 +129,16 @@ export const techStack: TechStackItem[] = [
   {
     name: "Claude AI",
     icon: claude,
+    scale: 1,
+  },
+  {
+    name: "Django",
+    icon: django,
+    scale: 1,
+  },
+  {
+    name: "Python",
+    icon: python,
     scale: 1,
   },
 ];

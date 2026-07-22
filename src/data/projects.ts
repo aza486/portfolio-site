@@ -1,10 +1,15 @@
 import type { Project } from "../types/project";
 
-import libreDeskCover from "../assets/projects/Gebürstet_60x_40_P90414909_highRes_bmw-m4-competition-c.jpg";
-import libreDesk2 from "../assets/projects/lamborghini-murcielago-lp640-4-lamborghini-vehicle-car-digital-art-hd-wallpaper-98c65df860801cc8f0dc61ae5832c4da.jpg";
+import libreDeskCover from "../assets/projects/KI_Antwort.png";
+import libreDesk2 from "../assets/projects/n8n_Workflow.png";
 import libreDesk3 from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
 
-import photolabCover from "../assets/projects/lamborghini-murcielago-lp640-4-lamborghini-vehicle-car-digital-art-hd-wallpaper-98c65df860801cc8f0dc61ae5832c4da.jpg";
+import photolabCover from "../assets/projects/ProfotoLP.png";
+import profoto_editor from "../assets/projects/ProfotoEditor.png";
+import profotoLP from "../assets/projects/ProfotoLP.png";
+import profoto_shopware from "../assets/projects/ProfotoShopware.png";
+import profotoPBX from "../assets/projects/ProfotoPBX.png";
+
 import fitKnightCover from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
 
 import { techStackMap } from "./techStack";
@@ -60,72 +65,105 @@ export const projects: Project[] = [
     ],
 
     ctaLabel: "Code auf GitHub →",
-    ctaUrl: "https://github.com/DEIN-REPO",
+    ctaUrl: "https://github.com/aza486/libredesk_custom",
   },
 
   {
     id: "project-b",
 
-    title: "Projekt B",
+    title: "Profotolab: E-Commerce Plattform",
 
     shortDescription:
-      "Interaktives Frontend für einen datengetriebenen Workflow.",
+      "Modernisierung und Weiterentwicklung einer produktiven E-Commerce-Plattform für Fotolabor Profotolab.",
 
     responsibilities: [
-      "...",
-      "...",
-      "...",
+      "Frontend-Modernisierung (HTML, CSS, JavaScript)",
+      "Integration des Printbox-Produkteditors",
+      "Produktkonfiguration & Shopware-Verwaltung",
+      "Landingpages & Informationsseiten entwickelt",
+      "SEO-Optimierung & Content-Erstellung",
+      "Technischer Ansprechpartner & Fehleranalyse",
     ],
 
     features: [
-      "...",
-      "...",
-      "...",
+      "Produkteditoren für Fotoabzüge, Wandbilder, Fotogeschenke, etc.",
+      "Dynamische Produktparameter (Größen, Layouts, Preise)",
+      "Individuelle Landingpages",
+      "Shopware-Integration mit externem Printbox-System",
+      "Python-Tools zur Prozessautomatisierung",
+      "Produktiv im täglichen Unternehmenseinsatz",
     ],
 
     techIcons: [
-      techStackMap["Shopware"],
+      techStackMap["HTML5"],
+      techStackMap["CSS3"],
       techStackMap["JavaScript"],
-      techStackMap["Docker"],
-      techStackMap["Git"],
+      techStackMap["Shopware"],
+      techStackMap["Python"],
+      techStackMap["Django"],
+      techStackMap["Photoshop"],
     ],
 
     images: [
       {
         src: photolabCover,
-        title: "Photolab Oberfläche",
+        title: "Profotolab Startseite",
       },
+      {
+        src: profoto_editor,
+        title: "Produkteditor Fotoabzüge",
+      },
+      {
+        src: profotoLP,
+        title: "Landingpage Kleinformate",
+      },
+      {
+        src: profoto_shopware,
+        title: "Verwaltung-Backend Shopware",
+      },
+      {
+        src: profotoPBX,
+        title: "Django-Backend von Printbox",
+      },
+      
     ],
 
     ctaLabel: "Live ansehen →",
-    ctaUrl: "https://deine-live-seite.de",
+    ctaUrl: "https://www.profotolab.de/",
   },
 
   {
     id: "project-c",
 
-    title: "Projekt C",
+    title: "Persönliche Website",
 
     shortDescription:
       "Portfolio-Case mit Designsystem und technischer Umsetzung.",
 
     responsibilities: [
-      "...",
-      "...",
-      "...",
+      "UI/UX-Konzept & Wireframes erstellt",
+      "Frontend mit React & TypeScript entwickelt",
+      "Responsive Design für Desktop & Mobile",
+      "Animationen & Micro-Interactions umgesetzt",
+      "Komponentenarchitektur aufgebaut",
     ],
 
     features: [
-      "...",
-      "...",
-      "...",
+      "Interaktive Projektübersicht",
+      "Responsive One-Page-Design",
+      "Dynamische Overlays & Navigation",
+      "Animierte Benutzeroberfläche",
+      "Optimiert für Performance & Benutzerfreundlichkeit",
     ],
 
     techIcons: [
-      techStackMap["Shopware"],
-      techStackMap["JavaScript"],
-      techStackMap["Docker"],
+      techStackMap["React"],
+      techStackMap["TypeScript"],
+      techStackMap["Vite"],
+      techStackMap["CSS3"],
       techStackMap["Git"],
+      techStackMap["Adobe XD"],
+      techStackMap["Photoshop"],
     ],
 
     images: [
@@ -135,7 +173,7 @@ export const projects: Project[] = [
       },
     ],
 
-    ctaLabel: "Prototype ansehen →",
-    ctaUrl: "https://xd.adobe.com/...",
+    ctaLabel: "Code auf Github →",
+    ctaUrl: "https://github.com/aza486/portfolio-site",
   },
 ];
