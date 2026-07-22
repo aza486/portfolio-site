@@ -2,9 +2,10 @@ import "./PortfolioViewMobile.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/pagination";
+
+import { useState } from "react";
 
 import TechStack from "../home/profile/TechStack";
 
@@ -19,6 +20,8 @@ function PortfolioViewMobile({
   project,
   onBack,
 }: PortfolioViewMobileProps) {
+
+  const [activeIndex, setActiveIndex] = useState(0);
 
   return (
 
@@ -45,6 +48,9 @@ function PortfolioViewMobile({
         }}
         loop
         spaceBetween={20}
+        onSlideChange={(swiper) =>
+        setActiveIndex(swiper.realIndex)
+        }
       >
 
         {project.images.map((image, index) => (
@@ -63,7 +69,7 @@ function PortfolioViewMobile({
       </Swiper>
 
       <div className="portfolio-mobile-caption">
-        {project.images[0].title}
+        {project.images[activeIndex].title}
       </div>
 
       <p className="portfolio-mobile-description">

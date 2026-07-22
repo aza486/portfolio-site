@@ -167,10 +167,14 @@ function App() {
 
       )}
 
-    <Footer
-        onImpressum={() => navigateMobile("impressum")}
-        onDatenschutz={() => navigateMobile("datenschutz")}
-    />
+      {mobileView === "home" && (
+
+          <Footer
+              onImpressum={() => navigateMobile("impressum")}
+              onDatenschutz={() => navigateMobile("datenschutz")}
+          />
+
+      )}
 
     </div>
 
