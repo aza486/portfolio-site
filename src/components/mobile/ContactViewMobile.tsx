@@ -39,29 +39,29 @@ function ContactViewMobile({
         <ContactItemMobile
           icon={<FaGithub />}
           title="GitHub"
-          subtitle="github.com/azza486"
-          href="https://github.com/azza486"
+          subtitle="github.com/aza486"
+          href="https://github.com/aza486"
         />
 
         <ContactItemMobile
           icon={<FaLinkedin />}
           title="LinkedIn"
           subtitle="linkedin.com/in/daniel-podjapolski"
-          href="https://linkedin.com/in/daniel-podjapolski"
+          href="https://www.linkedin.com/in/daniel-podjapolski-615447424/"
         />
 
         <ContactItemMobile
           icon={<FaEnvelope />}
           title="E-Mail"
-          subtitle="daniel@yolo.de"
-          href="mailto:daniel@yolo.de"
+          subtitle="hello@dp-studio.dev"
+          href="mailto:hello@dp-studio.dev"
         />
 
         <ContactItemMobile
           icon={<FaPhone />}
           title="Telefon"
-          subtitle="+49 169 6969696"
-          href="tel:+491696969696"
+          subtitle="+49 1590 5808384"
+          href="tel:+4915905808384"
         />
 
       </div>
