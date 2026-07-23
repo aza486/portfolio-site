@@ -31,21 +31,21 @@ function ContactView() {
             icon={<FaLinkedin />}
             title="LinkedIn"
             value="linkedin.com/in/daniel-podjapolski"
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/daniel-podjapolski-615447424/"
           />
 
           <ContactItem
             icon={<MdEmail />}
             title="E-Mail"
-            value="daniel@yolo.de"
-            href="mailto:daniel@yolo.de"
+            value="hello@dp-studio.dev"
+            href="mailto:hello@dp-studio.dev"
           />
 
           <ContactItem
             icon={<IoCall />}
             title="Telefon"
-            value="+49 169 6969696"
-            href="tel:+491696969696"
+            value="+49 1590 5808384"
+            href="tel:+4915905808384"
           />
 
         </div>
