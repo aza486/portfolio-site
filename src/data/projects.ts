@@ -10,7 +10,11 @@ import profotoLP from "../assets/projects/ProfotoLP.png";
 import profoto_shopware from "../assets/projects/ProfotoShopware.png";
 import profotoPBX from "../assets/projects/ProfotoPBX.png";
 
-import fitKnightCover from "../assets/projects/nissan-skyline-r34-4k-j6.jpg";
+import portfoliocover from "../assets/projects/PortfolioCover.png";
+import wireframessmart1 from "../assets/projects/WireframesSmartphone.png";
+import wireframessmart2 from "../assets/projects/WireframesSmartphone2.png";
+import wireframesdesktop1 from "../assets/projects/WireframesDesktop.png";
+import wireframesdesktop2 from "../assets/projects/WireframesDesktop2.png";
 
 import { techStackMap } from "./techStack";
 
@@ -168,8 +172,24 @@ export const projects: Project[] = [
 
     images: [
       {
-        src: fitKnightCover,
-        title: "FitKnight Oberfläche",
+        src: portfoliocover,
+        title: "Responsive Design Portfolio Website",
+      },
+      {
+        src: wireframessmart1,
+        title: "Wireframes Smartphone Anfang",
+      },
+      {
+        src: wireframessmart2,
+        title: "Wireframes Smartphone Pre-Production",
+      },
+      {
+        src: wireframesdesktop1,
+        title: "Wireframes Desktop Anfang",
+      },
+      {
+        src: wireframesdesktop2,
+        title: "Wireframes Desktop Pre-Production",
       },
     ],
 
