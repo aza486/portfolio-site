@@ -63,6 +63,13 @@ function App() {
 
     window.setTimeout(() => {
 
+      window.history.pushState(
+          {
+              mobileView: nextView,
+          },
+          ""
+      );
+
         setMobileView(nextView);
 
         requestAnimationFrame(() => {
@@ -86,10 +93,60 @@ function App() {
   const [selectedProject, setSelectedProject] =
     useState<Project | null>(null);
 
-  const closeOverlay = () => {
-    setActiveOverlay(null);
-    setSelectedProject(null);
-  };
+    useEffect(() => {
+
+        window.history.replaceState(
+            {
+                mobileView: "home",
+                overlay: null,
+            },
+            ""
+        );
+
+    }, []);
+
+    useEffect(() => {
+
+        const handlePopState = (event: PopStateEvent) => {
+
+            if (!event.state) {
+
+                setMobileView("home");
+                setActiveOverlay(null);
+                setSelectedProject(null);
+
+                return;
+            }
+
+            if (event.state.mobileView) {
+
+                setMobileView(event.state.mobileView);
+
+            }
+
+            if ("overlay" in event.state) {
+
+                setActiveOverlay(event.state.overlay);
+
+            }
+
+        };
+
+        window.addEventListener("popstate", handlePopState);
+
+        return () =>
+            window.removeEventListener(
+                "popstate",
+                handlePopState
+            );
+
+    }, []);
+
+const closeOverlay = () => {
+
+    window.history.back();
+
+};
   
 
   return isMobile ? (
@@ -182,17 +239,71 @@ function App() {
 
     <>
       <HomeView
-        onAbout={() => setActiveOverlay("about")}
-        onContact={() => setActiveOverlay("contact")}
+        onAbout={() => {
+
+            window.history.pushState(
+                {
+                    overlay: "about",
+                },
+                ""
+            );
+
+            setActiveOverlay("about");
+
+        }}
+        onContact={() => {
+
+            window.history.pushState(
+                {
+                    overlay: "contact",
+                },
+                ""
+            );
+
+            setActiveOverlay("contact");
+
+        }}
         onProjectClick={(project) => {
-          setSelectedProject(project);
-          setActiveOverlay("portfolio");
+
+            setSelectedProject(project);
+
+            window.history.pushState(
+                {
+                    overlay: "portfolio",
+                },
+                ""
+            );
+
+            setActiveOverlay("portfolio");
+
         }}
       />
 
       <Footer
-        onImpressum={() => setActiveOverlay("impressum")}
-        onDatenschutz={() => setActiveOverlay("datenschutz")}
+        onImpressum={() => {
+
+            window.history.pushState(
+                {
+                    overlay: "impressum",
+                },
+                ""
+            );
+
+            setActiveOverlay("impressum");
+
+        }}
+        onDatenschutz={() => {
+
+            window.history.pushState(
+                {
+                    overlay: "datenschutz",
+                },
+                ""
+            );
+
+            setActiveOverlay("datenschutz");
+
+        }}
       />
 
       {activeOverlay === "about" && (
