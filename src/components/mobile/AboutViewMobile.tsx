@@ -7,10 +7,12 @@ import type { MobileViewState } from "../../types/viewState";
 
 interface AboutViewMobileProps {
   onNavigate: (view: MobileViewState) => void;
+  onContact: () => void;
 }
 
 function AboutViewMobile({
   onNavigate,
+  onContact,
 }: AboutViewMobileProps) {
 
   return (
@@ -59,7 +61,16 @@ function AboutViewMobile({
 
       </section>
 
+      <button
+          className="contact-button-mobile"
+          onClick={onContact}
+      >
+          Kontakt →
+      </button>
+
     </section>
+
+
 
   );
 

@@ -31,10 +31,19 @@ function App() {
 
   const [portfolioOrigin, setPortfolioOrigin] =
   useState<MobileViewState>("home");
+
+  const [contactOrigin, setContactOrigin] =
+  useState<MobileViewState>("home");
  
   const goBackMobile = () => {
 
     navigateMobile(portfolioOrigin);
+
+  };
+
+  const goBackContact = () => {
+
+    navigateMobile(contactOrigin);
 
   };
 
@@ -174,6 +183,13 @@ const closeOverlay = () => {
       {mobileView === "about" && (
         <AboutViewMobile
             onNavigate={navigateMobile}
+            onContact={() => {
+
+                setContactOrigin("about");
+
+                navigateMobile("contact");
+
+            }}
         />
       )}
 
@@ -202,9 +218,9 @@ const closeOverlay = () => {
 
         {mobileView === "contact" && (
 
-          <ContactViewMobile
-              onNavigate={navigateMobile}
-          />
+            <ContactViewMobile
+                onBack={goBackContact}
+            />
 
       )}
 

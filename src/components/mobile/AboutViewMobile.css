@@ -97,6 +97,48 @@
     width: auto;
 }
 
+.contact-button-mobile{
+
+    width:auto;
+
+    padding: 12.5px 25px;
+
+    margin: 0 auto;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:var(--color-accent-darkblue);
+
+    color:white;
+
+    font-family:var(--font-display);
+
+    font-size:var(--fs-h3);
+
+    cursor:pointer;
+
+    transition:
+        transform .18s ease,
+        background .18s ease;
+
+    text-decoration: none;
+}
+
+.contact-button-mobile:hover{
+
+    color:var(--color-accent-red);
+
+    transform:translateY(-2px);
+}
+
+.contact-button-mobile:active{
+
+    transform:scale(.96);
+
+}
+
 
 
 @media (min-width:600px) and (max-width:1000px) {

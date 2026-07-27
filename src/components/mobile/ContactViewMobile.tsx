@@ -11,14 +11,12 @@ import {
 
 import ContactItemMobile from "./ContactItemMobile";
 
-import type { MobileViewState } from "../../types/viewState";
-
 interface ContactViewMobileProps {
-  onNavigate: (view: MobileViewState) => void;
+  onBack: () => void;
 }
 
 function ContactViewMobile({
-  onNavigate,
+  onBack,
 }: ContactViewMobileProps) {
 
   return (
@@ -27,7 +25,7 @@ function ContactViewMobile({
 
       <button
         className="mobile-close"
-        onClick={() => onNavigate("home")}
+        onClick={onBack}
       >
         ✕
       </button>
