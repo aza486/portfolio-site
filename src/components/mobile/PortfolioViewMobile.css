@@ -198,7 +198,6 @@
     color:var(--color-accent-red);
 
     transform:
-        rotate(90deg)
         scale(.9);
 
 }
