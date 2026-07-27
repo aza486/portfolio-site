@@ -173,6 +173,26 @@
 
 }
 
+.mobile-close{
+
+    align-self:flex-end;
+
+    border:none;
+
+    background:none;
+
+    color:white;
+
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease,
+    color .2s ease;
+
+}
+
 .mobile-close:active{
 
     color:var(--color-accent-red);
