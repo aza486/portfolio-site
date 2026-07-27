@@ -92,23 +92,30 @@
 
 }
 
-.mobile-close {
+
+.mobile-close{
 
     position: absolute;
 
     top: 1.6rem;
     right: 2rem;
 
-    border: none;
-    background: none;
+    align-self:flex-end;
 
-    color: white;
+    border:none;
 
-    font-size: 2rem;
+    background:none;
 
-    cursor: pointer;
+    color:white;
 
-    transition: transform .2s ease;
+    font-size:1.5rem;
+
+    cursor:pointer;
+
+    transition:
+    transform .2s ease,
+    color .2s ease;
+
 }
 
 .mobile-close:active{
