@@ -37,17 +37,20 @@
 
 }
 
-@media (max-width:1000px){
+.footer-mobile{
 
-    .footer{
+    position:static;
 
-        left:50%;
-        right:auto;
+    left:auto;
+    right:auto;
+    bottom:auto;
 
-        transform:translateX(-50%);
+    transform:none;
 
-        bottom:18px;
+    justify-content:center;
 
-    }
+    margin-top:auto;
+
+    padding:1rem 0;
 
 }

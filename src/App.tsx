@@ -242,10 +242,11 @@ const closeOverlay = () => {
 
       {mobileView === "home" && (
 
-          <Footer
-              onImpressum={() => navigateMobile("impressum")}
-              onDatenschutz={() => navigateMobile("datenschutz")}
-          />
+            <Footer
+                mobile
+                onImpressum={() => navigateMobile("impressum")}
+                onDatenschutz={() => navigateMobile("datenschutz")}
+            />
 
       )}
 

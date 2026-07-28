@@ -35,12 +35,61 @@
 
     margin-bottom:12px;
 
-    color:#09BC8A;
+    color:var(--color-accent-green);
 
 }
 
 .legal-view p{
 
     color:rgba(255,255,255,.85);
+
+}
+
+@media (max-width:1000px){
+
+ .legal-view{
+
+    width:100%;
+    height:100%;
+
+    box-sizing:border-box;
+
+    padding:56px;
+
+    overflow:auto;
+
+    color:white;
+
+    font-family:Roboto,sans-serif;
+
+    line-height:1.8;
+
+}
+
+.legal-view h1{
+
+    font-family:"Black Ops One",sans-serif;
+
+    font-size:var(--fs-h3);
+
+    margin-bottom:50px;
+
+}
+
+.about-mobile h2{
+
+    font-size:var(--fs-small);
+
+}
+
+.legal-view p{
+
+    font-size:var(--fs-small);
+
+}   
+
+.mobile-close {
+    top: 3%;
+}
 
 }

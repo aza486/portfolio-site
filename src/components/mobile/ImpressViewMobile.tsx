@@ -1,4 +1,4 @@
-import "./AboutViewMobile.css";
+import "./DatenschutzViewMobile.css";
 
 import ImpressumView from "../home/ImpressView";
 
