@@ -270,3 +270,29 @@ margin-top:1.5rem;
     }
 
 }
+
+/* Kleine Smartphones (z. B. iPhone SE 2/3) */
+@media (max-height: 700px) {
+
+    .mobile-portrait-wrapper{
+
+        width:min(200px,75vw);
+
+        aspect-ratio:0.78;
+
+        border-radius:50% / 38%;
+
+    }
+
+}
+
+/* Sehr kleine Smartphones */
+@media (max-height: 600px) {
+
+    .mobile-portrait-wrapper{
+
+        width:min(200px,60vw);
+
+    }
+
+}
