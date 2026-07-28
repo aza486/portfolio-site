@@ -278,9 +278,6 @@ margin-top:1.5rem;
 
         width:min(200px,75vw);
 
-        aspect-ratio:0.78;
-
-        border-radius:50% / 38%;
 
     }
 
@@ -292,6 +289,7 @@ margin-top:1.5rem;
     .mobile-portrait-wrapper{
 
         width:min(200px,60vw);
+
 
     }
 

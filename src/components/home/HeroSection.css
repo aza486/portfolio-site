@@ -19,16 +19,25 @@
 
     opacity:0;
 
-    clip-path:inset(0 100% 0 0);
-
     filter:blur(8px);
+
+    -webkit-mask-image:linear-gradient(
+        to right,
+        transparent 0%,
+        black 0%
+    );
+
+    -webkit-mask-size:200% 100%;
+
+    -webkit-mask-position:100% 0;
+
+    -webkit-mask-repeat:no-repeat;
 
 }
 
 .intro-title.show{
 
     animation:
-
         heroReveal 1.2s cubic-bezier(.22,.61,.36,1) forwards;
 
 }
@@ -54,13 +63,13 @@
 
 @keyframes heroReveal{
 
-    0%{
+    from{
 
         opacity:0;
 
-        clip-path:inset(0 100% 0 0);
-
         filter:blur(8px);
+
+        -webkit-mask-position:100% 0;
 
     }
 
@@ -70,18 +79,17 @@
 
     }
 
-    100%{
+    to{
 
         opacity:1;
 
-        clip-path:inset(0 0 0 0);
-
         filter:blur(0);
+
+        -webkit-mask-position:0 0;
 
     }
 
 }
-
 
 @keyframes heroName{
 
