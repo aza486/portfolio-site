@@ -1,16 +1,12 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg id="Ebene_2" data-name="Ebene 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448.96 393.74">
-  <defs>
+<svg xmlns="http://www.w3.org/2000/svg" id="Ebene_2" data-name="Ebene 2" viewBox="0 0 448.96 393.74" width="448.96" height="393.74"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><defs>
     <style>
       .cls-1 {
         fill: #ff3319;
       }
     </style>
-  </defs>
-  <g id="Ebene_1-2" data-name="Ebene 1">
+  </defs><g id="Ebene_1-2" data-name="Ebene 1">
     <g>
-      <path class="cls-1" d="M273.34,14.87l-118.84,172.24L0,214.41l6.96,39.4h.07s20.68,117.06,20.68,117.06l-.1.15,32.92,22.72L306.27,37.59l-32.92-22.72ZM46.43,246.84l76.14-13.45-62.52,90.61-13.63-77.15Z"/>
-      <path class="cls-1" d="M448.96,176l-1.6-8.05-25.22-144.65.37-.54L389.62,0l-246.43,356.13,32.89,22.76,119.32-172.45,153.55-30.45ZM402.66,144.4l-74.54,14.78,61.59-89.01,12.94,74.23Z"/>
+      <path class="cls-1" d="M273.34,14.87l-118.84,172.24L0,214.41l6.96,39.4h.07s20.68,117.06,20.68,117.06l-.1.15,32.92,22.72L306.27,37.59l-32.92-22.72ZM46.43,246.84l76.14-13.45-62.52,90.61-13.63-77.15Z"></path>
+      <path class="cls-1" d="M448.96,176l-1.6-8.05-25.22-144.65.37-.54L389.62,0l-246.43,356.13,32.89,22.76,119.32-172.45,153.55-30.45ZM402.66,144.4l-74.54,14.78,61.59-89.01,12.94,74.23Z"></path>
     </g>
-  </g>
-</svg>
+  </g></svg>
