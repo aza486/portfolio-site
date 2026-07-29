@@ -1,5 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Roboto:wght@400;500;700;900&display=swap");
-
+@import "./fonts.css";
 * {
   margin: 0;
   padding: 0;
