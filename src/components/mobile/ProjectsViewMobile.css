@@ -86,11 +86,6 @@
     transition: .25s;
 }
 
-.project-mobile-card:hover img {
-
-    border-color: var(--color-accent-red);
-
-}
 
 
 .mobile-close{
