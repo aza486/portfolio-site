@@ -69,6 +69,11 @@
     font-weight: 400;
 }
 
+.project-mobile-card h3 {
+
+    color: var(--color-accent-red);
+}
+
 .project-mobile-card img {
 
     width: 100%;
