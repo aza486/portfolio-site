@@ -86,6 +86,11 @@
     transition: .25s;
 }
 
+.project-mobile-card:active img {
+
+    border-color: var(--color-accent-red);
+
+}
 
 
 .mobile-close{
