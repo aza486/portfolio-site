@@ -1,6 +1,6 @@
 .profile-image {
   display: block;
-  width: 550px;
+  width: 700px;
   height: auto;
   margin-top: 0;
   pointer-events: none;
@@ -11,29 +11,26 @@
 
 .profile-image-hidden {
   opacity: 0;
-  transform: translateY(30px) scale(.95);
+  transform: translateY(30px) scale(0.95);
 }
 
 .profile-image-show {
-  animation: profileImageIntro .8s cubic-bezier(.22,.61,.36,1) forwards;
+  animation: profileImageIntro 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
 }
 
 @keyframes profileImageIntro {
-
   from {
     opacity: 0;
-    transform: translateY(30px) scale(.95);
+    transform: translateY(30px) scale(0.95);
   }
 
   to {
     opacity: 1;
     transform: translateY(0) scale(1);
   }
-
 }
 
-@media (min-width:1001px) and (max-width:1279px) {
-
+@media (min-width: 1001px) and (max-width: 1279px) {
   .profile-image {
     display: block;
     width: 250px;
@@ -42,5 +39,4 @@
     pointer-events: none;
     user-select: none;
   }
-
 }

@@ -7,8 +7,8 @@
 
 .profile-image-layer {
   position: absolute;
-  left: -100px;
-  bottom: -120px;
+  left: -200px;
+  bottom: -50px;
   z-index: 2;
 }
 
@@ -64,14 +64,12 @@
   align-items: center;
 }
 
-
-.tech-swiper .tech-icon{
+.tech-swiper .tech-icon {
   height: 42px;
   width: auto;
 
-  transition: transform .25s ease;
+  transition: transform 0.25s ease;
 }
-
 
 .profile-actions {
   display: grid;
@@ -100,8 +98,7 @@
 
 .contact-button:hover {
   color: var(--color-accent-red);
-  box-shadow:
-    0 12px 30px rgba(0,0,0,.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
 
 /* ===========================
@@ -117,11 +114,11 @@
 
 .tech-stack-show,
 .contact-button-show {
-  animation: profileContentReveal .7s cubic-bezier(.22,.61,.36,1) forwards;
+  animation: profileContentReveal 0.7s cubic-bezier(0.22, 0.61, 0.36, 1)
+    forwards;
 }
 
 @keyframes profileContentReveal {
-
   from {
     opacity: 0;
     transform: translateY(24px);
@@ -131,149 +128,133 @@
     opacity: 1;
     transform: translateY(0);
   }
-
 }
-
 
 /* ---------- PROJECT TECH MARQUEE ---------- */
 
 .tech-marquee {
+  width: 100%;
 
-    width: 100%;
-
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .tech-marquee-track {
+  display: flex;
 
-    display: flex;
+  align-items: center;
 
-    align-items: center;
+  gap: 26px;
 
-    gap: 26px;
+  width: max-content;
 
-    width: max-content;
+  animation: tech-marquee 12s linear infinite;
 
-    animation: tech-marquee 12s linear infinite;
+  will-change: transform;
 
-    will-change: transform;
+  backface-visibility: hidden;
 
-    backface-visibility: hidden;
-
-    transform: translate3d(0,0,0);
+  transform: translate3d(0, 0, 0);
 }
 
 .tech-marquee .tech-slide {
+  flex: 0 0 auto;
 
-    flex: 0 0 auto;
+  display: flex;
 
-    display: flex;
+  justify-content: center;
 
-    justify-content: center;
-
-    align-items: center;
+  align-items: center;
 }
 
 .tech-marquee .tech-icon {
+  height: 32px;
 
-    height: 32px;
-
-    width: auto;
+  width: auto;
 }
 
 @keyframes tech-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
 
-    from {
-        transform: translate3d(0,0,0);
-    }
-
-    to {
-        transform: translate3d(-50%,0,0);
-    }
-
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 @media (min-width: 768px) {
-
-.tech-marquee {
+  .tech-marquee {
     width: calc(100% - 20px);
 
     margin-left: 20px;
-}
-  
-}
-
-
-@media (min-width:1001px) and (max-width:1279px) {
-
-.contact-button {
-  width: 150px;
-  min-height: 45px;
+  }
 }
 
-.profile-actions {
-  width: auto;
-  margin-top: 0;
-}
+@media (min-width: 1001px) and (max-width: 1279px) {
+  .contact-button {
+    width: 150px;
+    min-height: 45px;
+  }
 
-.profile-content{
-  width: 55%;
-}
+  .profile-actions {
+    width: auto;
+    margin-top: 0;
+  }
 
-.profile-section {
-  min-height: auto;
-}
+  .profile-content {
+    width: 55%;
+  }
 
-.profile-image-layer {
-  position: absolute;
-  left: 10%;
-  bottom: 10%;
-  z-index: 2;
-  clip-path: ellipse(44% 50% at 50% 50%);
-}
+  .profile-section {
+    min-height: auto;
+  }
 
-.about-content {
-  display: grid;
-  gap: 1.9rem;
-  width: 350px;
-}
+  .profile-image-layer {
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
+    z-index: 2;
+    clip-path: ellipse(44% 50% at 50% 50%);
+  }
 
+  .about-content {
+    display: grid;
+    gap: 1.9rem;
+    width: 350px;
+  }
 
-.tech-stack {
-  display: grid;
-  width: 350px;
-  gap: 1.4rem;
-  font-family: var(--font-display);
-  font-size: var(--fs-body);
-  font-weight: var(--font-weight-normal);
-}
+  .tech-stack {
+    display: grid;
+    width: 350px;
+    gap: 1.4rem;
+    font-family: var(--font-display);
+    font-size: var(--fs-body);
+    font-weight: var(--font-weight-normal);
+  }
 
-.tech-swiper .tech-icon{
-  height: 24px;
-
-
-}
-
+  .tech-swiper .tech-icon {
+    height: 24px;
+  }
 }
 
 /* HOME (Firefox) */
 
 .tech-marquee-home .tech-marquee-track {
-    animation: tech-marquee 40s linear infinite;
-    gap: 36px;
+  animation: tech-marquee 40s linear infinite;
+  gap: 36px;
 }
 
 .tech-marquee-home .tech-icon {
-    height: 42px;
+  height: 42px;
 }
 
 /* PORTFOLIO */
 
 .tech-marquee-portfolio .tech-marquee-track {
-    animation: tech-marquee 12s linear infinite;
-    gap: 26px;
+  animation: tech-marquee 12s linear infinite;
+  gap: 26px;
 }
 
 .tech-marquee-portfolio .tech-icon {
-    height: 32px;
+  height: 32px;
 }
