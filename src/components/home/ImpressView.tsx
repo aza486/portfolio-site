@@ -10,24 +10,25 @@ function ImpressumView() {
 
             <p>
                 Daniel Podjapolski<br />
-                Musterstraße 1<br />
-                01234 Musterstadt<br />
+                Birkenstraße 8<br />
+                01169 Dresden<br />
                 Deutschland
             </p>
 
             <h2>Kontakt</h2>
 
             <p>
-                Telefon: +49 XXX XXXXXXXX<br />
-                E-Mail: yolo@mail.de
+                Telefon: +49 15905808384<br />
+                E-Mail: hello@dp-studio.dev
             </p>
 
             <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
 
             <p>
                 Daniel Podjapolski<br />
-                Musterstraße 1<br />
-                01234 Musterstadt
+                Birkenstraße 8<br />
+                01169 Dresden<br />
+                Deutschland
             </p>
 
             <h2>Haftung für Inhalte</h2>
