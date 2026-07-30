@@ -76,11 +76,6 @@
 
 }
 
-.about-mobile h2{
-
-    font-size:var(--fs-small);
-
-}
 
 .legal-view p{
 
@@ -88,8 +83,5 @@
 
 }   
 
-.mobile-close {
-    top: 3%;
-}
 
 }

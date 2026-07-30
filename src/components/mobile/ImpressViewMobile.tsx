@@ -14,7 +14,7 @@ function ImpressumViewMobile({
 
   return (
 
-    <section className="about-mobile view-animation">
+    <section className="legal-view-mobile view-animation">
 
       <button
         className="mobile-close"
