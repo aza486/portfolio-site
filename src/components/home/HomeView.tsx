@@ -11,13 +11,18 @@ interface HomeViewProps {
   onAbout: () => void;
   onContact: () => void;
   onProjectClick: (project: Project) => void;
+  onPortraitLoaded?: () => void;
 }
 
 function HomeView({ onAbout, onContact, onProjectClick }: HomeViewProps) {
 
   const [timeline, setTimeline] = useState(0);
 
+  const [portraitLoaded, setPortraitLoaded] = useState(false);
+
 useEffect(() => {
+
+    if (!portraitLoaded) return;
 
     let current = 0;
 
@@ -51,7 +56,7 @@ useEffect(() => {
 
     };
 
-}, []);
+}, [portraitLoaded]);
 
   return (
     
@@ -67,6 +72,7 @@ useEffect(() => {
           timeline={timeline}
           onAbout={onAbout}
           onContact={onContact}
+          onPortraitLoaded={() => setPortraitLoaded(true)}
         />
 
         <ProjectSidebar

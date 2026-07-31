@@ -47,11 +47,13 @@ const [showHello, setShowHello] = useState(!playIntro);
 
 const [showButtons, setShowButtons] = useState(!playIntro);
 
+const [portraitLoaded, setPortraitLoaded] = useState(false);
+
 
 
 useEffect(() => {
 
-  if (!playIntro) return;
+  if (!playIntro || !portraitLoaded) return;
 
   const timers: number[] = [];
 
@@ -125,7 +127,7 @@ useEffect(() => {
     timers.forEach(clearTimeout);
   };
 
-}, [playIntro, onIntroFinished]);
+}, [playIntro, portraitLoaded, onIntroFinished]);
 
 
   return (
@@ -142,6 +144,7 @@ useEffect(() => {
         <img
           src={heroImages[heroFrame]}
           alt="Daniel"
+          onLoad={() => setPortraitLoaded(true)}
           className={`mobile-portrait ${
             playIntro
                 ? showPortrait
