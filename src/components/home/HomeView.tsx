@@ -51,15 +51,15 @@ useEffect(() => {
         let current = 0;
 
         const times = [
-            0,
-            1000,
-            3500,
-            5000,
-            6500,
-            8000,
-            9500,
-            11000,
-            11000,
+        0,      // Portrait
+        1000,    // Hallo + Winken
+        3500,   // ", ich bin Designer&Developer"
+        5000,   // Daniel Podjapolski
+        6500,   // About
+        8000,   // Tech
+        9500,   // Projekte
+        11000,   // Kontakt
+        11000    // Ende
         ];
 
         times.forEach(time => {
