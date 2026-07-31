@@ -57,6 +57,8 @@ function ProfileImage({
         visible ? "profile-image-show" : "profile-image-hidden"
       }`}
       src={images[frame]}
+      loading="eager"
+      fetchPriority="high"
       alt="Daniel Podjapolski"
     />
   );

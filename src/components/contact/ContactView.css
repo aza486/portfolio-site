@@ -1,19 +1,27 @@
-.contact-view {
-  display: grid;
-  grid-template-columns: 1fr 0.95fr;
+.contact-view{
+    width:100%;
+    height:100%;
 
-  align-items: stretch;
+    background:var(--color-bg-overlay);
 
-  gap: 3rem;
+    border-radius:16px;
 
-  width: 100%;
-  height: 100%;
+    overflow:hidden;
 
-  padding: 4rem 5rem;
+    position:relative;
+}
 
-  background: var(--color-bg-overlay);
+.contact-content{
 
-  border-radius: 16px;
+    display:grid;
+
+    grid-template-columns:1fr .95fr;
+
+    gap:3rem;
+
+    padding:4rem 5rem;
+
+    height:100%;
 }
 
 .contact-left {
@@ -38,30 +46,24 @@
   flex-direction: column;
 }
 
-.contact-right {
-  display: flex;
+.contact-right{
 
-  justify-content: flex-end;
+    display:flex;
 
-  align-items: flex-end;
+    align-items:flex-end;
 
-  height: 100%;
+    justify-content:flex-end;
 
-  overflow: visible;
+    min-height:100%;
 }
 
-.contact-portrait {
-  height: 640px;
+.contact-portrait{
 
-  transform: translateY(16px);
+    position:absolute;
 
-  width: auto;
+    right:0rem;
 
-  object-fit: contain;
+    bottom:0;
 
-  display: block;
-
-  user-select: none;
-
-  pointer-events: none;
+    height:640px;
 }

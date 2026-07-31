@@ -21,19 +21,26 @@
 
 .mobile-portrait-wrapper{
 
-    width:min(340px,90vw);
+    width:100%;
 
-    aspect-ratio:0.78;
+    aspect-ratio:.78;
 
     overflow:hidden;
-
-    border-radius:50% / 38%;
 
     display:flex;
 
     justify-content:center;
 
     align-items:flex-end;
+
+    -webkit-mask-image:url("/masks/portrait-mask.svg");
+    mask-image:url("/masks/portrait-mask.svg");
+
+    -webkit-mask-repeat:no-repeat;
+    mask-repeat:no-repeat;
+
+    -webkit-mask-size:100% 100%;
+    mask-size:100% 100%;
 }
 
 
@@ -46,7 +53,7 @@
 
     object-fit:cover;
 
-    object-position:center top; /* If you want to adjust the position of the image within the circle, you can change this value, eg. object-position:center 15%; */
+    object-position:70% top; /* If you want to adjust the position of the image within the circle, you can change this value, eg. object-position:center 15%; */
 }
 
 

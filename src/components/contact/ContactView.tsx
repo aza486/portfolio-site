@@ -14,53 +14,58 @@ function ContactView() {
   return (
     <section className="contact-view">
 
-      <div className="contact-left">
+      <div className="contact-content">
 
-        <h2>Kontakt</h2>
+        <div className="contact-left">
 
-        <div className="contact-list">
+          <h2>Kontakt</h2>
 
-          <ContactItem
-            icon={<FaGithub />}
-            title="GitHub"
-            value="github.com/aza486"
-            href="https://github.com/aza486"
-          />
+          <div className="contact-list">
 
-          <ContactItem
-            icon={<FaLinkedin />}
-            title="LinkedIn"
-            value="linkedin.com/in/daniel-podjapolski"
-            href="https://www.linkedin.com/in/daniel-podjapolski-615447424/"
-          />
+            <ContactItem
+              icon={<FaGithub />}
+              title="GitHub"
+              value="github.com/aza486"
+              href="https://github.com/aza486"
+            />
 
-          <ContactItem
-            icon={<MdEmail />}
-            title="E-Mail"
-            value="hello@dp-studio.dev"
-            href="mailto:hello@dp-studio.dev"
-          />
+            <ContactItem
+              icon={<FaLinkedin />}
+              title="LinkedIn"
+              value="linkedin.com/in/daniel-podjapolski"
+              href="https://www.linkedin.com/in/daniel-podjapolski-615447424/"
+            />
 
-          <ContactItem
-            icon={<IoCall />}
-            title="Telefon"
-            value="+49 1590 5808384"
-            href="tel:+4915905808384"
-          />
+            <ContactItem
+              icon={<MdEmail />}
+              title="E-Mail"
+              value="hello@dp-studio.dev"
+              href="mailto:hello@dp-studio.dev"
+            />
+
+            <ContactItem
+              icon={<IoCall />}
+              title="Telefon"
+              value="+49 1590 5808384"
+              href="tel:+4915905808384"
+            />
+
+          </div>
 
         </div>
 
-      </div>
-
-      <div className="contact-right">
-
-        <img
-          src={bananaPortrait}
-          alt="Daniel mit Banane"
-          className="contact-portrait"
-        />
+        <div className="contact-right" />
 
       </div>
+
+      <img
+        src={bananaPortrait}
+        alt="Daniel mit Banane"
+        className="contact-portrait"
+        loading="eager"
+        fetchPriority="high"
+        decoding="async"
+      />
 
     </section>
   );

@@ -7,8 +7,8 @@
 
 .profile-image-layer {
   position: absolute;
-  left: -200px;
-  bottom: -50px;
+  left: -13rem;
+  bottom: -10rem;
   z-index: 2;
 }
 
