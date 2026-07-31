@@ -21,11 +21,9 @@
 
 .mobile-portrait-wrapper{
 
-    width:100%;
-
     aspect-ratio:.78;
 
-    overflow:hidden;
+    overflow:visible;
 
     display:flex;
 
@@ -41,6 +39,8 @@
 
     -webkit-mask-size:100% 100%;
     mask-size:100% 100%;
+
+    width: calc(80vw + var(--space-md) * 2);
 }
 
 
@@ -283,7 +283,7 @@ margin-top:1.5rem;
 
     .mobile-portrait-wrapper{
 
-        width:min(200px,75vw);
+        width: calc(75vw + var(--space-md) * 2);
 
 
     }
@@ -295,8 +295,7 @@ margin-top:1.5rem;
 
     .mobile-portrait-wrapper{
 
-        width:min(200px,60vw);
-
+        width: calc(60vw + var(--space-md) * 2);
 
     }
 
