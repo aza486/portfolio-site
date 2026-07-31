@@ -47,87 +47,116 @@ const [showHello, setShowHello] = useState(!playIntro);
 
 const [showButtons, setShowButtons] = useState(!playIntro);
 
-const [portraitLoaded, setPortraitLoaded] = useState(false);
-
 
 
 useEffect(() => {
 
-  if (!playIntro || !portraitLoaded) return;
+  if (!playIntro) return;
 
+  const imageSources = [
+    heroStill,
+    heroWave1,
+    heroWave2,
+  ];
+
+  let cancelled = false;
   const timers: number[] = [];
 
-  // 1. Portrait einblenden
-  timers.push(
-    window.setTimeout(() => {
-      setShowPortrait(true);
-    }, 0)
-  );
+  Promise.all(
 
-  // 2. Winken starten
-  timers.push(
-    window.setTimeout(() => {
+    imageSources.map(src =>
+      new Promise<void>(resolve => {
 
-      const sequence = [0, 1, 2, 1, 2, 0];
+        const img = new Image();
 
-      let index = 0;
+        img.onload = () => resolve();
+        img.onerror = () => resolve();
 
-      const interval = window.setInterval(() => {
+        img.src = src;
 
-        index++;
+      })
+    )
 
-        if (index >= sequence.length) {
-          clearInterval(interval);
-          return;
-        }
+  ).then(() => {
 
-        setHeroFrame(sequence[index]);
+    if (cancelled) return;
 
-      }, 400);
+    // 1. Portrait einblenden
+    timers.push(
+      window.setTimeout(() => {
+        setShowPortrait(true);
+      }, 0)
+    );
 
-    }, 1000)
-  );
+    // 2. Winken starten
+    timers.push(
+      window.setTimeout(() => {
 
-  // 3. Hallo
-  timers.push(
-    window.setTimeout(() => {
-      setShowHello(true);
-    }, 1000)
-  );
+        const sequence = [0, 1, 2, 1, 2, 0];
 
-  // 4. Rest vom Titel
-  timers.push(
-    window.setTimeout(() => {
-      setShowTitle(true);
-    }, 3500)
-  );
+        let index = 0;
 
-  // 5. Name
-  timers.push(
-    window.setTimeout(() => {
-      setShowName(true);
-    }, 5500)
-  );
+        const interval = window.setInterval(() => {
 
-  // 6. Buttons
-  timers.push(
-    window.setTimeout(() => {
-      setShowButtons(true);
-    }, 7000)
-  );
+          index++;
 
-  // Intro abgeschlossen
-  timers.push(
-    window.setTimeout(() => {
-      onIntroFinished();
-    }, 7000)
-  );
+          if (index >= sequence.length) {
+            clearInterval(interval);
+            return;
+          }
+
+          setHeroFrame(sequence[index]);
+
+        }, 400);
+
+      }, 1000)
+    );
+
+    // 3. Hallo
+    timers.push(
+      window.setTimeout(() => {
+        setShowHello(true);
+      }, 1000)
+    );
+
+    // 4. Rest vom Titel
+    timers.push(
+      window.setTimeout(() => {
+        setShowTitle(true);
+      }, 3500)
+    );
+
+    // 5. Name
+    timers.push(
+      window.setTimeout(() => {
+        setShowName(true);
+      }, 5500)
+    );
+
+    // 6. Buttons
+    timers.push(
+      window.setTimeout(() => {
+        setShowButtons(true);
+      }, 7000)
+    );
+
+    // Intro abgeschlossen
+    timers.push(
+      window.setTimeout(() => {
+        onIntroFinished();
+      }, 7000)
+    );
+
+  });
 
   return () => {
+
+    cancelled = true;
     timers.forEach(clearTimeout);
+
   };
 
-}, [playIntro, portraitLoaded, onIntroFinished]);
+}, [playIntro, onIntroFinished]);
 
 
   return (
@@ -144,7 +173,6 @@ useEffect(() => {
         <img
           src={heroImages[heroFrame]}
           alt="Daniel"
-          onLoad={() => setPortraitLoaded(true)}
           className={`mobile-portrait ${
             playIntro
                 ? showPortrait

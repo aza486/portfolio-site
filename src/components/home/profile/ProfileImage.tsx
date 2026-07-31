@@ -7,12 +7,10 @@ import wave2 from "../../../assets/profile/wave2.png";
 
 interface ProfileImageProps {
   timeline?: number;
-  onLoaded?: () => void;
 }
 
 function ProfileImage({
   timeline,
-  onLoaded,
 }: ProfileImageProps) {
 
   const visible =
@@ -60,7 +58,6 @@ function ProfileImage({
       }`}
       src={images[frame]}
       loading="eager"
-      onLoad={onLoaded}
       fetchPriority="high"
       alt="Daniel Podjapolski"
     />

@@ -8,21 +8,18 @@ interface ProfileSectionProps {
   timeline?: number;
   onAbout: () => void;
   onContact: () => void;
-  onPortraitLoaded?: () => void;
 }
 
 function ProfileSection({
   timeline, 
   onAbout, 
-  onContact,
-  onPortraitLoaded 
+  onContact, 
   }: ProfileSectionProps) {
   return (
     <section className="profile-section">
       <div className="profile-image-layer">
         <ProfileImage 
         timeline={timeline} 
-        onLoaded={onPortraitLoaded}
     />
       </div>
 

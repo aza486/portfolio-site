@@ -6,6 +6,10 @@ import ProjectSidebar from "./ProjectSidebar";
 import type { Project } from "../../types/project";
 import { useEffect, useState } from "react";
 
+import profile from "../../assets/profile/profile.png";
+import wave1 from "../../assets/profile/wave1.png";
+import wave2 from "../../assets/profile/wave2.png";
+
 
 interface HomeViewProps {
   onAbout: () => void;
@@ -18,45 +22,60 @@ function HomeView({ onAbout, onContact, onProjectClick }: HomeViewProps) {
 
   const [timeline, setTimeline] = useState(0);
 
-  const [portraitLoaded, setPortraitLoaded] = useState(false);
 
 useEffect(() => {
 
-    if (!portraitLoaded) return;
-
-    let current = 0;
-
-    const times = [
-        0,      // Portrait
-        1000,    // Hallo + Winken
-        3500,   // ", ich bin Designer&Developer"
-        5000,   // Daniel Podjapolski
-        6500,   // About
-        8000,   // Tech
-        9500,   // Projekte
-        11000,   // Kontakt
-        11000    // Ende
+    const imageSources = [
+        profile,
+        wave1,
+        wave2,
     ];
 
-    const timers = times.map(time =>
+    Promise.all(
 
-        window.setTimeout(() => {
+        imageSources.map(src =>
+            new Promise<void>(resolve => {
 
-            current++;
+                const img = new Image();
 
-            setTimeline(current);
+                img.onload = () => resolve();
+                img.onerror = () => resolve(); // trotzdem weitermachen
 
-        }, time)
+                img.src = src;
 
-    );
+            })
+        )
 
-    return () => {
+    ).then(() => {
 
-        timers.forEach(clearTimeout);
+        let current = 0;
 
-    };
+        const times = [
+            0,
+            1000,
+            3500,
+            5000,
+            6500,
+            8000,
+            9500,
+            11000,
+            11000,
+        ];
 
-}, [portraitLoaded]);
+        times.forEach(time => {
+
+            window.setTimeout(() => {
+
+                current++;
+                setTimeline(current);
+
+            }, time);
+
+        });
+
+    });
+
+}, []);
 
   return (
     
@@ -72,7 +91,6 @@ useEffect(() => {
           timeline={timeline}
           onAbout={onAbout}
           onContact={onContact}
-          onPortraitLoaded={() => setPortraitLoaded(true)}
         />
 
         <ProjectSidebar
