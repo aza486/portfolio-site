@@ -22,7 +22,7 @@ export const projects: Project[] = [
   {
     id: "project-a",
 
-    title: "Libredesk - n8n Workflow",
+    title: "KI Mail Automatisierung",
 
     shortDescription:
       "Entwicklung eines KI-gestützten Helpdesks auf Basis von LibreDesk. Ziel war die Automatisierung eingehender Kundenanfragen durch intelligente Ticketanalyse, n8n-Workflows und KI-gestützte Antwortvorschläge.",
