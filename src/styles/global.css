@@ -202,6 +202,7 @@ svg {
 
   :root {
 
+    /* Fonts */
     --fs-hero: 3.5rem;
     --fs-hero-name: 1.7rem;
 
@@ -213,12 +214,49 @@ svg {
 
     --fs-button: 1.55rem;
 
+    /* Layout */
     --content-width: 1700px;
     --project-width: 440px;
     --section-gap: 5rem;
 
+    /* UI */
     --icon-size: 78px;
     --button-height: 68px;
+
+  }
+
+}
+
+
+/* ===========================
+   Large Desktop / 2.5K
+=========================== */
+
+@media (min-width:2560px) and (max-width:3839px) {
+
+  :root {
+
+    /* Fonts */
+    --fs-hero: 4.2rem;
+    --fs-hero-name: 2rem;
+
+    --fs-h2: 2rem;
+    --fs-h3: 1.7rem;
+
+    --fs-body: 1.4rem;
+    --fs-small: 1.2rem;
+
+    --fs-button: 1.7rem;
+
+    /* Layout */
+    --content-width: 2300px;
+    --project-width: 520px;
+    --section-gap: 6rem;
+
+    /* UI */
+    --icon-size: 88px;
+    --button-height: 76px;
+
   }
 
 }
@@ -227,10 +265,15 @@ svg {
    4K
 =========================== */
 
-@media (min-width:2560px) {
+/* ===========================
+   4K / Ultra Wide
+=========================== */
+
+@media (min-width:3840px) {
 
   :root {
 
+    /* Fonts */
     --fs-hero: 5rem;
     --fs-hero-name: 2.4rem;
 
@@ -242,12 +285,15 @@ svg {
 
     --fs-button: 2rem;
 
-    --content-width: 2200px;
-    --project-width: 560px;
-    --section-gap: 6rem;
+    /* Layout */
+    --content-width: 2900px;
+    --project-width: 650px;
+    --section-gap: 8rem;
 
-    --icon-size: 96px;
-    --button-height: 84px;
+    /* UI */
+    --icon-size: 108px;
+    --button-height: 88px;
+
   }
 
 }
