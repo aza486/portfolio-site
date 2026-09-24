@@ -54,27 +54,7 @@ function HomeViewMobile({
 
   const [heroFrame, setHeroFrame] = useState(0);
 
-  
-  useEffect(() => {
 
-    const imageSources = [
-      ...heroImages,
-      ...idleImages,
-    ];
-
-    imageSources.forEach((src) => {
-
-      const img = new Image();
-
-      img.src = src;
-
-      if (img.decode) {
-        img.decode().catch(() => {});
-      }
-
-    });
-
-  }, []);
 
   const [showTitle, setShowTitle] =
     useState(!playIntro);

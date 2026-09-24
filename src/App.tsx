@@ -4,6 +4,8 @@ import "./styles/animations.css";
 import type { ViewState, MobileViewState } from "./types/viewState";
 import type { Project } from "./types/project";
 
+import { preloadAllImages } from "./utils/preloadImages";
+
 import HomeView from "./components/home/HomeView";
 import AboutView from "./components/about/AboutView";
 import PortfolioView from "./components/portfolio/PortfolioView";
@@ -47,7 +49,9 @@ function App() {
 
   };
 
-
+    useEffect(() => {
+    preloadAllImages();
+    }, []);
 
     useEffect(() => {
 
