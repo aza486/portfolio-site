@@ -1,24 +1,150 @@
-.profile-image {
+.profile-image-wrapper {
+  position: relative;
   display: block;
+
   width: 750px;
   height: auto;
+
   margin-top: 0;
+
   pointer-events: none;
   user-select: none;
 }
 
-/* Desktop-Timeline */
+
+/* =========================
+   BASISBILD
+========================= */
+
+.profile-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  pointer-events: none;
+  user-select: none;
+}
+
+
+/* =========================
+   IDLE-BILD
+========================= */
+
+.profile-image.idle-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  opacity: 0;
+}
+
+
+/* =========================
+   IDLE CROSSFADE
+========================= */
+
+/*
+   Während eines Idle-Wechsels:
+
+   BASE:
+   100% → 0% → 100%
+
+   IDLE:
+   0% → 100% → 0%
+*/
+
+.profile-image-wrapper.idle-active .base-image {
+  animation:
+    baseImageFade
+    6.6s
+    ease-in-out
+    forwards;
+}
+
+.profile-image-wrapper.idle-active .idle-image {
+  animation:
+    idleImageFade
+    6.6s
+    ease-in-out
+    forwards;
+}
+
+
+/* Basisbild */
+
+@keyframes baseImageFade {
+
+  /* profile.png sichtbar */
+  0% {
+    opacity: 1;
+  }
+
+  /* Übergang */
+  15% {
+    opacity: 0;
+  }
+
+  /* Idle-Bild sichtbar */
+  85% {
+    opacity: 0;
+  }
+
+  /* zurück zu profile.png */
+  100% {
+    opacity: 1;
+  }
+
+}
+
+
+/* Idle-Bild */
+
+@keyframes idleImageFade {
+
+  /* profile.png sichtbar */
+  0% {
+    opacity: 0;
+  }
+
+  /* Idle-Bild eingeblendet */
+  15% {
+    opacity: 1;
+  }
+
+  /* Idle-Bild bleibt sichtbar */
+  85% {
+    opacity: 1;
+  }
+
+  /* zurück zu profile.png */
+  100% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================
+   INTRO
+========================= */
+
+.profile-image-show {
+  animation:
+    profileImageIntro
+    0.8s
+    cubic-bezier(0.22, 0.61, 0.36, 1)
+    forwards;
+}
 
 .profile-image-hidden {
   opacity: 0;
   transform: translateY(30px) scale(0.95);
 }
 
-.profile-image-show {
-  animation: profileImageIntro 0.8s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-}
-
 @keyframes profileImageIntro {
+
   from {
     opacity: 0;
     transform: translateY(30px) scale(0.95);
@@ -28,15 +154,18 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+
 }
 
+
+/* =========================
+   SMALL DESKTOP
+========================= */
+
 @media (min-width: 1001px) and (max-width: 1279px) {
-  .profile-image {
-    display: block;
+
+  .profile-image-wrapper {
     width: 250px;
-    height: auto;
-    margin-top: 0;
-    pointer-events: none;
-    user-select: none;
   }
+
 }

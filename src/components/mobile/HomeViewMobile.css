@@ -1,302 +1,435 @@
-.home-mobile{
+.home-mobile {
+    min-height: 100dvh;
 
-    min-height:100dvh;
+    display: flex;
+    flex-direction: column;
 
-    display:flex;
+    justify-content: center;
+    align-items: center;
 
-    flex-direction:column;
+    gap: var(--space-md);
 
-    justify-content:center;
+    padding: var(--space-md);
 
-    align-items:center;
-
-    gap:var(--space-md);
-
-    padding:var(--space-md);
-
-    text-align:left;
+    text-align: left;
 }
 
 
+/* ==========================================
+   MOBILE PORTRAIT
+========================================== */
 
-.mobile-portrait-wrapper{
+.mobile-portrait-wrapper {
+    position: relative;
 
-    aspect-ratio:.78;
+    aspect-ratio: .78;
+    overflow: visible;
 
-    overflow:visible;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:flex-end;
-
-    -webkit-mask-image:url("/masks/portrait-mask.svg");
-    mask-image:url("/masks/portrait-mask.svg");
-
-    -webkit-mask-repeat:no-repeat;
-    mask-repeat:no-repeat;
-
-    -webkit-mask-size:100% 100%;
-    mask-size:100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 
     width: calc(80vw + var(--space-md) * 2);
+
+    -webkit-mask-image: url("/masks/portrait-mask.svg");
+    mask-image: url("/masks/portrait-mask.svg");
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+
+    cursor: pointer;
+
+    -webkit-tap-highlight-color: transparent;
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    touch-action: manipulation;
 }
 
 
+/* Normales Portrait */
 
-.mobile-portrait{
+.mobile-portrait {
+    display: block;
 
-    width:100%;
+    width: 100%;
+    height: 100%;
 
-    height:100%;
+    object-fit: cover;
+    object-position: 70% top;
 
-    object-fit:cover;
-
-    object-position:70% top; /* If you want to adjust the position of the image within the circle, you can change this value, eg. object-position:center 15%; */
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 
+/* Idle-Portrait */
 
-.mobile-navigation{
+.mobile-idle-portrait {
+    position: absolute;
 
-    display:flex;
+    inset: 0;
 
-    gap:1.4rem;
+    width: 100%;
+    height: 100%;
 
+    object-fit: cover;
+    object-position: 70% top;
+
+    opacity: 0;
+
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
 }
 
 
+/* ==========================================
+   MOBILE IDLE CROSSFADE
+========================================== */
 
-.mobile-nav-button{
+/*
+ * Wenn ein Idle-Bild aktiv ist:
+ *
+ * BASISBILD
+ * 100% → 0% → 100%
+ *
+ * IDLE-BILD
+ * 0% → 100% → 0%
+ *
+ * Dadurch wird wirklich zwischen den
+ * beiden Bildern überblendet.
+ */
 
-    width:72px;
-    height:72px;
+.mobile-portrait-idle-active
+    .mobile-portrait:not(.mobile-idle-portrait) {
+    animation:
+        mobileBaseFade
+        6.6s
+        ease-in-out
+        forwards;
+}
 
-    border-radius:50%;
 
-    border:2px solid rgba(255, 255, 255, 0.5);
+.mobile-portrait-idle-active
+    .mobile-idle-portrait {
+    animation:
+        mobileIdleFade
+        6.6s
+        ease-in-out
+        forwards;
+}
+
+
+/*
+ * Normales Portrait
+ */
+
+@keyframes mobileBaseFade {
+
+    0% {
+        opacity: 1;
+    }
+
+    /*
+     * Idle-Bild übernimmt
+     */
+    15% {
+        opacity: 0;
+    }
+
+    /*
+     * Idle-Bild bleibt sichtbar
+     */
+    85% {
+        opacity: 0;
+    }
+
+    /*
+     * Zurück zu profile.png
+     */
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/*
+ * Idle Portrait
+ */
+
+@keyframes mobileIdleFade {
+
+    0% {
+        opacity: 0;
+    }
+
+    /*
+     * Idle-Bild blendet ein
+     */
+    15% {
+        opacity: 1;
+    }
+
+    /*
+     * Idle-Bild bleibt sichtbar
+     */
+    85% {
+        opacity: 1;
+    }
+
+    /*
+     * Idle-Bild blendet aus
+     */
+    100% {
+        opacity: 0;
+    }
+}
+
+
+/* ==========================================
+   INTRO PORTRAIT
+========================================== */
+
+.intro-portrait {
+    opacity: 0;
+
+    transform:
+        translateY(24px)
+        scale(.92);
+
+    filter: blur(8px);
+}
+
+
+.intro-portrait.show {
+    animation:
+        portraitIntro
+        .8s
+        cubic-bezier(.22, .61, .36, 1)
+        forwards;
+}
+
+
+@keyframes portraitIntro {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(24px)
+            scale(.92);
+
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: none;
+
+        filter: blur(0);
+    }
+}
+
+
+/* ==========================================
+   MOBILE NAVIGATION
+========================================== */
+
+.mobile-navigation {
+    display: flex;
+
+    gap: 1.4rem;
+}
+
+
+.mobile-nav-button {
+    width: 72px;
+    height: 72px;
+
+    border-radius: 50%;
+
+    border: 2px solid rgba(255, 255, 255, 0.5);
+
     box-shadow: var(--shadow);
 
-    background:var(--color-accent-darkblue);
+    background: var(--color-accent-darkblue);
 
-    color:white;
+    color: white;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
 
-    font-size:1.65rem;
+    justify-content: center;
+    align-items: center;
 
-    cursor:pointer;
+    font-size: 1.65rem;
+
+    cursor: pointer;
 
     transition:
         border-color .18s ease,
         color .18s ease,
         transform .18s ease,
         background .18s ease;
-
-}
-
-.mobile-nav-button:active{
-
-    transform:scale(.93);
-
-    color:var(--color-accent-red);
-
-    border-color:var(--color-accent-red);
-
 }
 
 
-.mobile-nav-button:hover{
+.mobile-nav-button:active {
+    transform: scale(.93);
 
-    color:var(--color-accent-red);
+    color: var(--color-accent-red);
 
-    border-color:var(--color-accent-red);
-
-    transform:translateY(-3px);
-
+    border-color: var(--color-accent-red);
 }
 
 
-@media (max-width:1000px){
+.mobile-nav-button:hover {
+    color: var(--color-accent-red);
 
-.hero-section {
-    margin-left: 0;
-}
+    border-color: var(--color-accent-red);
 
-.hero-title{
-    line-height: 1.04;
-}
-
-.hero-section{
-
-    flex:0;
-}
-
-.mobile-portrait-wrapper{
-
-    flex:2;
-}
-
-.mobile-navigation{
-
-    flex:1;
-}
-
-}
-
-@media (min-width:600px) and (max-width:1000px) {
-
-.home-mobile{
-
-    gap:0;
-    max-width:700px;
-    margin:0 auto;
-
-}
-
-.hero-title{
-    margin-bottom: 3rem;
-}
-
-.hero-section{
-
-    gap:1;
-    flex:0;
-    margin-left: 2rem;
-}
-
-.mobile-portrait-wrapper{
-
-width:min(50vw,420px);
-margin-inline: auto;
-
-}
-
-.mobile-navigation{
-
-gap:2.5rem;
-margin-top:1.5rem;
-
-}
-
+    transform: translateY(-3px);
 }
 
 
-.intro-portrait{
+/* ==========================================
+   MOBILE LAYOUT
+========================================== */
 
-    opacity:0;
+@media (max-width: 1000px) {
 
-    transform:
-        translateY(24px)
-        scale(.92);
-
-    filter:blur(8px);
-
-}
-
-.intro-portrait.show{
-
-    animation:
-        portraitIntro .8s cubic-bezier(.22,.61,.36,1) forwards;
-
-}
-
-@keyframes portraitIntro{
-
-    from{
-
-        opacity:0;
-
-        transform:
-
-            translateY(24px)
-
-            scale(.92);
-
-        filter:blur(8px);
-
+    .hero-section {
+        margin-left: 0;
     }
 
-    to{
-
-        opacity:1;
-
-        transform:none;
-
-        filter:blur(0);
-
+    .hero-title {
+        line-height: 1.04;
     }
 
+    .hero-section {
+        flex: 0;
+    }
+
+    .mobile-portrait-wrapper {
+        flex: 2;
+    }
+
+    .mobile-navigation {
+        flex: 1;
+    }
 }
 
 
-.intro-button{
+/* ==========================================
+   TABLET / LARGE MOBILE
+========================================== */
 
-    opacity:1;
+@media (min-width: 600px) and (max-width: 1000px) {
+
+    .home-mobile {
+        gap: 0;
+
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+    .hero-title {
+        margin-bottom: 3rem;
+    }
+
+    .hero-section {
+        gap: 1rem;
+
+        flex: 0;
+
+        margin-left: 2rem;
+    }
+
+    .mobile-portrait-wrapper {
+        width: min(50vw, 420px);
+
+        margin-inline: auto;
+    }
+
+    .mobile-navigation {
+        gap: 2.5rem;
+
+        margin-top: 1.5rem;
+    }
+}
+
+
+/* ==========================================
+   INTRO BUTTONS
+========================================== */
+
+.intro-button {
+    opacity: 1;
 
     animation:
-        buttonIntro .45s ease forwards;
-
+        buttonIntro
+        .45s
+        ease
+        forwards;
 }
 
-.intro-button-hidden{
 
-    opacity:0;
+.intro-button-hidden {
+    opacity: 0;
 
     transform:
         translateY(18px)
         scale(.9);
 
-    pointer-events:none;
-
+    pointer-events: none;
 }
 
-@keyframes buttonIntro{
 
-    from{
+@keyframes buttonIntro {
 
-        opacity:0;
+    from {
+        opacity: 0;
 
         transform:
-
             translateY(18px)
-
             scale(.9);
-
     }
 
-    to{
+    to {
+        opacity: 1;
 
-        opacity:1;
-
-        transform:none;
-
+        transform: none;
     }
-
 }
 
-/* Kleine Smartphones (z. B. iPhone SE 2/3) */
+
+/* ==========================================
+   KLEINE SMARTPHONES
+   z. B. iPhone SE 2 / 3
+========================================== */
+
 @media (max-height: 700px) {
 
-    .mobile-portrait-wrapper{
-
+    .mobile-portrait-wrapper {
         width: calc(75vw + var(--space-md) * 2);
-
-
     }
-
 }
 
-/* Sehr kleine Smartphones */
+
+/* ==========================================
+   SEHR KLEINE SMARTPHONES
+========================================== */
+
 @media (max-height: 600px) {
 
-    .mobile-portrait-wrapper{
-
+    .mobile-portrait-wrapper {
         width: calc(60vw + var(--space-md) * 2);
-
     }
-
 }

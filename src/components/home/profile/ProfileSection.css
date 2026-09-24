@@ -186,7 +186,7 @@
   .tech-marquee {
     width: calc(100% - 20px);
 
-    margin-left: 20px;
+    margin-left: 5px;
   }
 }
 

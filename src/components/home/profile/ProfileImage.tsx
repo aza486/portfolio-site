@@ -16,6 +16,21 @@ interface ProfileImageProps {
   timeline?: number;
 }
 
+const images = [
+  profile,
+  wave1,
+  wave2,
+];
+
+const idleImages = [
+  coffee,
+  dab,
+  sleeping,
+  thinking,
+  thumbsup,
+  watch,
+];
+
 function ProfileImage({
   timeline,
 }: ProfileImageProps) {
@@ -25,27 +40,31 @@ function ProfileImage({
       ? true
       : timeline >= 1;
 
-  const [frame, setFrame] = useState(0);
+  const introReady =
+    timeline !== undefined &&
+    timeline >= 2;
 
+  const [frame, setFrame] = useState(0);
   const [idleImage, setIdleImage] =
     useState<string | null>(null);
 
-  // Intro-Bilder
-  const images = [
-    profile,
-    wave1,
-    wave2,
-  ];
+  /*
+   * PRELOAD
+   */
+  useEffect(() => {
 
-  // Zufällige Idle-Bilder
-  const idleImages = [
-    coffee,
-    dab,
-    sleeping,
-    thinking,
-    thumbsup,
-    watch,
-  ];
+    const allImages = [
+      ...images,
+      ...idleImages,
+    ];
+
+    allImages.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+  }, []);
+
 
   /*
    * INTRO / WINKEN
@@ -62,7 +81,7 @@ function ProfileImage({
       1, 2,
       1, 2,
       1, 2,
-      0
+      0,
     ];
 
     const timers = sequence.map((image, index) =>
@@ -80,16 +99,10 @@ function ProfileImage({
 
   /*
    * IDLE-ANIMATION
-   *
-   * Nach dem Intro:
-   * 15 Sekunden warten
-   * → zufälliges Bild für 5 Sekunden
-   * → zurück zu profile.png
-   * → wieder 15 Sekunden warten
    */
   useEffect(() => {
 
-    if (timeline === undefined || timeline < 2) {
+    if (!introReady) {
       setIdleImage(null);
       return;
     }
@@ -117,6 +130,10 @@ function ProfileImage({
 
       setIdleImage(idleImages[randomIndex]);
 
+      /*
+       * Gesamte Crossfade-Dauer:
+       * 6.6 Sekunden
+       */
       resetTimer = window.setTimeout(() => {
 
         setIdleImage(null);
@@ -126,9 +143,12 @@ function ProfileImage({
           15000
         );
 
-      }, 5000);
+      }, 6600);
     };
 
+    /*
+     * Erste Idle-Animation nach 15 Sekunden
+     */
     idleTimer = window.setTimeout(
       startIdleAnimation,
       15000
@@ -146,21 +166,42 @@ function ProfileImage({
 
     };
 
-  }, [timeline]);
+  }, [introReady]);
 
 
   return (
-    <img
-      className={`profile-image ${
+    <div
+      className={`profile-image-wrapper ${
         visible
           ? "profile-image-show"
           : "profile-image-hidden"
+      } ${
+        idleImage
+          ? "idle-active"
+          : ""
       }`}
-      src={idleImage ?? images[frame]}
-      loading="eager"
-      fetchPriority="high"
-      alt="Daniel Podjapolski"
-    />
+    >
+
+      {/* Basisbild */}
+      <img
+        className="profile-image base-image"
+        src={images[frame]}
+        loading="eager"
+        fetchPriority="high"
+        alt="Daniel Podjapolski"
+      />
+
+      {/* Idle-Bild */}
+      {idleImage && (
+        <img
+          className="profile-image idle-image"
+          src={idleImage}
+          loading="eager"
+          alt=""
+        />
+      )}
+
+    </div>
   );
 }
 
