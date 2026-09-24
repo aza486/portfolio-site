@@ -1,6 +1,6 @@
 import "./ContactViewMobile.css";
 
-import portrait from "../../assets/profile/banana.png";
+import portrait from "../../assets/profile/banana.webp";
 
 import {
   FaGithub,

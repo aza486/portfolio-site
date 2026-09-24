@@ -1,16 +1,16 @@
 import "./ProfileImage.css";
 import { useEffect, useState } from "react";
 
-import profile from "../../../assets/profile/profile.png";
-import wave1 from "../../../assets/profile/wave1.png";
-import wave2 from "../../../assets/profile/wave2.png";
+import profile from "../../../assets/profile/profile.webp";
+import wave1 from "../../../assets/profile/wave1.webp";
+import wave2 from "../../../assets/profile/wave2.webp";
 
-import coffee from "../../../assets/profile/coffee.png";
-import dab from "../../../assets/profile/dab.png";
-import sleeping from "../../../assets/profile/sleeping.png";
-import thinking from "../../../assets/profile/thinking.png";
-import thumbsup from "../../../assets/profile/thumbsup.png";
-import watch from "../../../assets/profile/watch.png";
+import coffee from "../../../assets/profile/coffee.webp";
+import dab from "../../../assets/profile/dab.webp";
+import sleeping from "../../../assets/profile/sleeping.webp";
+import thinking from "../../../assets/profile/thinking.webp";
+import thumbsup from "../../../assets/profile/thumbsup.webp";
+import watch from "../../../assets/profile/watch.webp";
 
 interface ProfileImageProps {
   timeline?: number;

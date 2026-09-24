@@ -1,20 +1,20 @@
 import type { Project } from "../types/project";
 
-import libreDeskCover from "../assets/projects/KI_Antwort.png";
-import libreDesk2 from "../assets/projects/n8n_Workflow.png";
-import libreDesk3 from "../assets/projects/VsCode_Docker.png";
+import libreDeskCover from "../assets/projects/KI_Antwort.webp";
+import libreDesk2 from "../assets/projects/n8n_Workflow.webp";
+import libreDesk3 from "../assets/projects/VsCode_Docker.webp";
 
-import photolabCover from "../assets/projects/ProfotoStartseite.png";
-import profoto_editor from "../assets/projects/ProfotoEditor.png";
-import profotoLP from "../assets/projects/ProfotoLP.png";
-import profoto_shopware from "../assets/projects/ProfotoShopware.png";
-import profotoPBX from "../assets/projects/ProfotoPBX.png";
+import photolabCover from "../assets/projects/ProfotoStartseite.webp";
+import profoto_editor from "../assets/projects/ProfotoEditor.webp";
+import profotoLP from "../assets/projects/ProfotoLP.webp";
+import profoto_shopware from "../assets/projects/ProfotoShopware.webp";
+import profotoPBX from "../assets/projects/ProfotoPBX.webp";
 
-import portfoliocover from "../assets/projects/PortfolioCover.png";
-import wireframessmart1 from "../assets/projects/WireframesSmartphone.png";
-import wireframessmart2 from "../assets/projects/WireframesSmartphone2.png";
-import wireframesdesktop1 from "../assets/projects/WireframesDesktop.png";
-import wireframesdesktop2 from "../assets/projects/WireframesDesktop2.png";
+import portfoliocover from "../assets/projects/PortfolioCover.webp";
+import wireframessmart1 from "../assets/projects/WireframesSmartphone.webp";
+import wireframessmart2 from "../assets/projects/WireframesSmartphone2.webp";
+import wireframesdesktop1 from "../assets/projects/WireframesDesktop.webp";
+import wireframesdesktop2 from "../assets/projects/WireframesDesktop2.webp";
 
 import { techStackMap } from "./techStack";
 

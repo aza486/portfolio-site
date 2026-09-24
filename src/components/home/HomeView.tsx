@@ -6,9 +6,9 @@ import ProjectSidebar from "./ProjectSidebar";
 import type { Project } from "../../types/project";
 import { useEffect, useState } from "react";
 
-import profile from "../../assets/profile/profile.png";
-import wave1 from "../../assets/profile/wave1.png";
-import wave2 from "../../assets/profile/wave2.png";
+import profile from "../../assets/profile/profile.webp";
+import wave1 from "../../assets/profile/wave1.webp";
+import wave2 from "../../assets/profile/wave2.webp";
 
 
 interface HomeViewProps {

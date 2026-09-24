@@ -1,6 +1,6 @@
 import "./ContactView.css";
 import ContactItem from "./ContactItem";
-import bananaPortrait from "../../assets/profile/banana.png";
+import bananaPortrait from "../../assets/profile/banana.webp";
 
 import {
   FaGithub,

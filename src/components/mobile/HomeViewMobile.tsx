@@ -2,16 +2,16 @@ import "./HomeViewMobile.css";
 import HeroSection from "../home/HeroSection";
 import { useEffect, useState } from "react";
 
-import heroStill from "../../assets/profile/profile.png";
-import heroWave1 from "../../assets/profile/wave1.png";
-import heroWave2 from "../../assets/profile/wave2.png";
+import heroStill from "../../assets/profile/profile.webp";
+import heroWave1 from "../../assets/profile/wave1.webp";
+import heroWave2 from "../../assets/profile/wave2.webp";
 
-import coffee from "../../assets/profile/coffee.png";
-import dab from "../../assets/profile/dab.png";
-import sleeping from "../../assets/profile/sleeping.png";
-import thinking from "../../assets/profile/thinking.png";
-import thumbsup from "../../assets/profile/thumbsup.png";
-import watch from "../../assets/profile/watch.png";
+import coffee from "../../assets/profile/coffee.webp";
+import dab from "../../assets/profile/dab.webp";
+import sleeping from "../../assets/profile/sleeping.webp";
+import thinking from "../../assets/profile/thinking.webp";
+import thumbsup from "../../assets/profile/thumbsup.webp";
+import watch from "../../assets/profile/watch.webp";
 
 import {
   FaUser,
