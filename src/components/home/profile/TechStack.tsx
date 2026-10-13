@@ -136,7 +136,7 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
         <span className="tech-level">{proficiencyOf(selected) === undefined ? "Noch offen" : experienceLevel(proficiencyOf(selected)!)}</span>
         <button className="tech-close" aria-label="Details schließen" onClick={() => {
           setSelected(null); setSelectedKey(null); anchor.current?.focus({ preventScroll: true }); paused.current = false;
-        }}><span aria-hidden="true">✕</span></button>
+        }}><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
       </div>
       <p>{selected.description || "Eine persönliche Beschreibung wird noch ergänzt."}</p>
       {selected.skills?.length ? <div className="tech-chips">{selected.skills.map(skill => <span key={skill}>{skill}</span>)}</div> : <p className="tech-missing">Kenntnisse noch nicht hinterlegt.</p>}
@@ -161,7 +161,8 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
               "--tech-color": tech.color,
               "--ring-length": `${RING_CIRCUMFERENCE}px`,
               "--ring-offset": `${RING_CIRCUMFERENCE * (1 - (value ?? 0) / 100)}px`,
-              "--logo-scale": tech.scale,
+              "--logo-scale": tech.scale * (mode === "project" ? (tech.projectScale ?? 1) : 1),
+              "--logo-offset-x": `${tech.logoOffsetX ?? 0}px`,
             } as CSSProperties;
             const icon = <>
               <span className="tech-ring">

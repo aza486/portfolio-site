@@ -11,7 +11,7 @@ button.tech-token { cursor: pointer; }
 .tech-ring circle { fill: none; stroke: var(--tech-color); stroke-width: 2.5; stroke-linecap: butt; }
 .tech-ring-base { opacity: .5; }
 .tech-ring-progress { stroke-dashoffset: var(--ring-length); transition: stroke-dashoffset 420ms ease; }
-.tech-ring img { width: 33px; height: 33px; object-fit: contain; transform: scale(var(--logo-scale)); }
+.tech-ring img { width: 33px; height: 33px; object-fit: contain; transform: translateX(var(--logo-offset-x, 0px)) scale(var(--logo-scale)); }
 .tech-percent { position: absolute; bottom: calc(100% + 4px); left: -5px; right: -5px; text-align: center; opacity: 0; line-height: 16px; }
 .tech-token.is-active .tech-ring-progress, button.tech-token:focus-visible .tech-ring-progress { stroke-dashoffset: var(--ring-offset); }
 .tech-token.is-active .tech-percent, button.tech-token:focus-visible .tech-percent { opacity: 1; }
@@ -26,12 +26,14 @@ button.tech-token:focus-visible { outline: 2px solid var(--tech-color); outline-
 .tech-detail-desktop { position: fixed; z-index: 1000; width: min(350px, calc(100vw - 16px)); }
 .tech-detail { position: relative; background: var(--color-accent-darkblue, #1c2036); color: var(--color-text, white); border: 1px solid var(--tech-color); border-radius: 10px; padding: 14px; box-shadow: 0 6px 18px #0003; font: 14px/1.4 var(--font-body, "Roboto", sans-serif); }
 .tech-detail::before { content: ""; position: absolute; top: -6px; left: clamp(12px, var(--tip, 24px), calc(100% - 24px)); width: 10px; height: 10px; transform: rotate(45deg); background: var(--color-accent-darkblue, #1c2036); border-top: 1px solid var(--tech-color); border-left: 1px solid var(--tech-color); }
-.tech-detail-heading { display: flex; align-items: center; gap: 8px; min-width: 0; }
+.tech-detail-heading { position: relative; display: flex; align-items: center; gap: 8px; min-width: 0; min-height: 32px; padding-right: 32px; }
 .tech-detail-heading img { flex: 0 0 24px; width: 24px; height: 24px; object-fit: contain; }
 .tech-detail-heading strong { flex: 1 1 0; min-width: 0; font-size: 15.5px; font-weight: 600; line-height: 1.25; overflow-wrap: anywhere; }
 .tech-level { flex: 0 0 auto; margin-left: auto; color: var(--tech-color); border: 1px solid color-mix(in srgb, var(--tech-color) 50%, transparent); border-radius: 20px; padding: 1px 6px; font-size: 10.5px; white-space: nowrap; }
 .tech-close {
-  position: relative;
+  position: absolute;
+  top: -8px;
+  right: -8px;
   flex-shrink: 0;
   width: 32px;
   height: 32px;
@@ -40,12 +42,13 @@ button.tech-token:focus-visible { outline: 2px solid var(--tech-color); outline-
   border: none;
   color: white;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 15px;
   transition: transform var(--close-duration) var(--close-easing), color var(--close-duration) var(--close-easing);
 }
-.tech-close span { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-size: 17px; line-height: 1; }
+.tech-close svg { position: absolute; width: 15px; height: 15px; top: 50%; left: 50%; transform: translate(-50%, -50%); fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
 @media (pointer: coarse) {
-  .tech-close { width: 44px; height: 44px; }
+  .tech-detail-heading { min-height: 44px; padding-right: 40px; }
+  .tech-close { width: 44px; height: 44px; top: -14px; right: -14px; }
 }
 .tech-close:focus-visible { color: var(--close-hover-color); transform: var(--close-hover-transform); outline: 2px solid currentColor; outline-offset: 2px; border-radius: 50%; }
 @media (hover: hover) and (pointer: fine) {

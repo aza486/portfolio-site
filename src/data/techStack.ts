@@ -25,6 +25,8 @@ export interface TechStackItem {
   name: string;
   icon: string;
   scale: number;
+  logoOffsetX?: number;
+  projectScale?: number;
   color: string;
   proficiency?: number;
   description?: string;
@@ -50,6 +52,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     name: "TypeScript",
+    projectScale: 0.82,
     icon: typescript,
     color: "#3178c6",
     proficiency: 40,
@@ -66,6 +69,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     name: "JavaScript",
+    projectScale: 0.82,
     icon: javascript,
     color: "#f7df1e",
     proficiency: 60,
@@ -298,6 +302,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     name: "HTML5",
+    projectScale: 0.82,
     icon: html,
     color: "#e44d26",
     proficiency: 90,
@@ -314,6 +319,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     name: "CSS3",
+    projectScale: 0.82,
     icon: css,
     color: "#2965f1",
     proficiency: 90,
@@ -363,6 +369,7 @@ export const techStack: TechStackItem[] = [
   },
   {
     name: "Django",
+    logoOffsetX: -2.5,
     icon: django,
     color: "#44b78b",
     proficiency: 20,
