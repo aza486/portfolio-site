@@ -31,6 +31,15 @@
   height:min(720px,82vh);
 }
 
+.overlay-close,
+.tech-close {
+  --close-hover-transform: scale(1.08) rotate(90deg);
+  --close-hover-color: var(--color-accent-red);
+  --close-symbol-size: 1.6rem;
+  --close-duration: .2s;
+  --close-easing: ease;
+}
+
 .overlay-close{
 
   position:absolute;
@@ -50,20 +59,20 @@
   color:white;
 
 
-  font-size:1.6rem;
+  font-size:var(--close-symbol-size);
 
   cursor:pointer;
 
 
   transition:
-      transform .2s ease;
+      transform var(--close-duration) var(--close-easing);
 }
 
 .overlay-close:hover{
 
-  color:var(--color-accent-red);
+  color:var(--close-hover-color);
   
-  transform:scale(1.08) rotate(90deg);
+  transform:var(--close-hover-transform);
 }
 
 .overlay-legal{
