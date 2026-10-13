@@ -1,4 +1,4 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useCallback, useEffect, useId, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 import { createPortal } from "react-dom";
 import { techStack, experienceLevel, proficiencyOf } from "../../../data/techStack";
@@ -28,12 +28,48 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
   const anchor = useRef<HTMLButtonElement | null>(null);
   const paused = useRef(false);
   const offset = useRef(0);
+  const keyboardInput = useRef(false);
+  const restoringFocus = useRef(false);
+  const selectionOpen = useRef(false);
   const [selected, setSelected] = useState<TechStackItem | null>(null);
   const [selectedKey, setSelectedKey] = useState<string | null>(null);
   const [copies, setCopies] = useState(1);
   const [position, setPosition] = useState({ left: 8, top: 0, tip: 24 });
   const id = useId();
   const [mobile, setMobile] = useState(() => window.matchMedia("(max-width: 1000px)").matches);
+  const restoreAnchorFocus = useCallback(() => {
+    restoringFocus.current = true;
+    try { anchor.current?.focus({ preventScroll: true }); }
+    finally { restoringFocus.current = false; }
+  }, []);
+
+  useEffect(() => {
+    if (!interactive) return;
+    let releaseFrame = 0;
+    const keyboard = (event: KeyboardEvent) => {
+      if (event.key === "Tab") keyboardInput.current = true;
+    };
+    const pointer = () => { keyboardInput.current = false; };
+    const release = () => {
+      cancelAnimationFrame(releaseFrame);
+      // Run after the click has selected/toggled its icon. Cancelled pointer
+      // gestures must also release the temporary pause without opening details.
+      releaseFrame = requestAnimationFrame(() => {
+        if (!selectionOpen.current && !keyboardInput.current) paused.current = false;
+      });
+    };
+    document.addEventListener("keydown", keyboard, true);
+    document.addEventListener("pointerdown", pointer, true);
+    document.addEventListener("pointerup", release);
+    document.addEventListener("pointercancel", release);
+    return () => {
+      cancelAnimationFrame(releaseFrame);
+      document.removeEventListener("keydown", keyboard, true);
+      document.removeEventListener("pointerdown", pointer, true);
+      document.removeEventListener("pointerup", release);
+      document.removeEventListener("pointercancel", release);
+    };
+  }, [interactive]);
   useEffect(() => {
     const query = window.matchMedia("(max-width: 1000px)");
     const update = () => setMobile(query.matches);
@@ -100,12 +136,12 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
       const left = Math.max(8, Math.min(rect.left + rect.width / 2 - width / 2, window.innerWidth - width - 8));
       setPosition({ left, top: rect.bottom + 10, tip: rect.left + rect.width / 2 - left });
     };
-    const close = () => { paused.current = false; setSelected(null); setSelectedKey(null); };
+    const close = () => { selectionOpen.current = false; paused.current = false; setSelected(null); setSelectedKey(null); };
     const outside = (event: PointerEvent) => {
       if (event.target instanceof Node && !card.current?.contains(event.target) && !track.current?.contains(event.target)) close();
     };
     const key = (event: KeyboardEvent) => {
-      if (event.key === "Escape") { close(); anchor.current?.focus({ preventScroll: true }); paused.current = false; }
+      if (event.key === "Escape") { close(); restoreAnchorFocus(); }
     };
     place();
     document.addEventListener("pointerdown", outside);
@@ -118,13 +154,13 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
       window.removeEventListener("resize", place);
       window.removeEventListener("scroll", place, true);
     };
-  }, [selected, selectedKey]);
+  }, [selected, selectedKey, restoreAnchorFocus]);
 
   const choose = (tech: TechStackItem, key: string, button: HTMLButtonElement) => {
     if (key === selectedKey) {
-      paused.current = false; setSelected(null); setSelectedKey(null);
+      selectionOpen.current = false; paused.current = false; setSelected(null); setSelectedKey(null);
     } else {
-      paused.current = true; anchor.current = button; setSelected(tech); setSelectedKey(key);
+      selectionOpen.current = true; paused.current = true; anchor.current = button; setSelected(tech); setSelectedKey(key);
     }
   };
   const details = selected && (
@@ -135,7 +171,7 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
         <strong>{selected.name}</strong>
         <span className="tech-level">{proficiencyOf(selected) === undefined ? "Noch offen" : experienceLevel(proficiencyOf(selected)!)}</span>
         <button className="tech-close" aria-label="Details schließen" onClick={() => {
-          setSelected(null); setSelectedKey(null); anchor.current?.focus({ preventScroll: true }); paused.current = false;
+          selectionOpen.current = false; setSelected(null); setSelectedKey(null); restoreAnchorFocus(); paused.current = false;
         }}><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" /></svg></button>
       </div>
       <p>{selected.description || "Eine persönliche Beschreibung wird noch ergänzt."}</p>
@@ -178,8 +214,20 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
             return interactive ? <button key={key} type="button" className={`tech-token ${active ? "is-active" : ""}`} style={style}
               aria-label={`${tech.name}, ${value === undefined ? "Erfahrungswert noch offen" : `${value} Prozent Erfahrung`}`}
               aria-expanded={active} aria-controls={active ? id : undefined}
+              onPointerDown={event => {
+                if (!event.isPrimary || event.button !== 0) return;
+                keyboardInput.current = false;
+                paused.current = true;
+                // Suppress native mouse focus scrolling; touch retains its
+                // scrolling gesture while receiving an already focused target.
+                if (event.pointerType === "mouse") event.preventDefault();
+                event.currentTarget.focus({ preventScroll: true });
+                // The previous button's blur handler may release its focus pause.
+                paused.current = true;
+              }}
               onClick={event => choose(tech, key, event.currentTarget)}
               onFocus={event => {
+                if (!keyboardInput.current || restoringFocus.current) return;
                 paused.current = true;
                 const container = viewport.current;
                 const row = track.current;
@@ -189,8 +237,11 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
                 const bounds = container.getBoundingClientRect();
                 const boundsIcon = event.currentTarget.getBoundingClientRect();
                 if (boundsIcon.left < bounds.left || boundsIcon.right > bounds.right) {
-                  // Keep the actual focused copy in view until focus/selection ends.
-                  offset.current = event.currentTarget.offsetLeft;
+                  // Keyboard navigation only: move the actual focused copy by
+                  // the minimum distance needed, never relocate pointer targets.
+                  offset.current += boundsIcon.left < bounds.left
+                    ? boundsIcon.left - bounds.left
+                    : boundsIcon.right - bounds.right;
                   row.style.transform = `translate3d(${-offset.current}px,0,0)`;
                 }
               }}
