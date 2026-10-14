@@ -1,3 +1,9 @@
+/* The positioned contact surface is painted after the shared overlay button.
+   Keep that existing close control above this desktop view and its portrait. */
+.overlay-contact > .overlay-close {
+    z-index: 1;
+}
+
 .contact-view{
     width:100%;
     height:100%;
