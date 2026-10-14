@@ -47,9 +47,15 @@ function TechStack({ timeline, compact = false, showTitle = true, items = techSt
     if (!interactive) return;
     let releaseFrame = 0;
     const keyboard = (event: KeyboardEvent) => {
-      if (event.key === "Tab") keyboardInput.current = true;
+      if (event.key === "Tab") {
+        keyboardInput.current = true;
+        viewport.current?.setAttribute("data-keyboard-focus", "true");
+      }
     };
-    const pointer = () => { keyboardInput.current = false; };
+    const pointer = () => {
+      keyboardInput.current = false;
+      viewport.current?.setAttribute("data-keyboard-focus", "false");
+    };
     const release = () => {
       cancelAnimationFrame(releaseFrame);
       // Run after the click has selected/toggled its icon. Cancelled pointer

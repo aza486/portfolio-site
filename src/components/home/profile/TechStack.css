@@ -15,7 +15,17 @@ button.tech-token { cursor: pointer; }
 .tech-percent { position: absolute; bottom: calc(100% + 4px); left: -5px; right: -5px; text-align: center; opacity: 0; line-height: 16px; }
 .tech-token.is-active .tech-ring-progress, button.tech-token:focus-visible .tech-ring-progress { stroke-dashoffset: var(--ring-offset); }
 .tech-token.is-active .tech-percent, button.tech-token:focus-visible .tech-percent { opacity: 1; }
-button.tech-token:focus-visible { outline: 2px solid var(--tech-color); outline-offset: -2px; border-radius: 50%; }
+/* Explicit input modality prevents programmatic pointer focus from retaining a
+   keyboard indicator. The inset dashed circle sits clear of the SVG stroke. */
+button.tech-token:focus { outline: none; }
+.tech-loop[data-keyboard-focus="true"] button.tech-token:focus-visible .tech-ring::after {
+  content: "";
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed var(--tech-color);
+  border-radius: 50%;
+  pointer-events: none;
+}
 @media (hover: hover) and (pointer: fine) {
   button.tech-token:hover .tech-ring-progress { stroke-dashoffset: var(--ring-offset); }
   button.tech-token:hover .tech-percent { opacity: 1; }
